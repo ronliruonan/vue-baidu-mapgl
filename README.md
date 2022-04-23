@@ -2,7 +2,10 @@
 因项目迭代，考虑成本问题，直接直接fork原作者，升级为百度地图 GL版本，待完善ing
 
 
-原作者：
+
+
+
+感谢原作者原作者：
 # VUE BAIDU MAP
 
 <p align="center">
