@@ -1,4 +1,4 @@
-import BaiduMap from './map/Map.vue'
+import BMapGL from './map/Map.vue'
 import BmView from './map/MapView.vue'
 import BmScale from './controls/Scale.vue'
 import BmNavigation from './controls/Navigation.vue'
@@ -38,50 +38,50 @@ import BmlCurveLine from './extra/CurveLine.vue'
 export default {
   install (Vue, options) {
     const {ak} = options
-    Vue.prototype._BMap = () => ({ak})
+    Vue.prototype._BMapGL = () => ({ak})
 
-    Vue.component('baidu-map', BaiduMap)
-    Vue.component('bm-view', BmView)
+    Vue.component('bmap-gl', BMapGL)
+    // Vue.component('bm-view', BmView)
 
-    Vue.component('bm-scale', BmScale)
-    Vue.component('bm-navigation', BmNavigation)
-    Vue.component('bm-map-type', BmMapType)
-    Vue.component('bm-overview-map', BmOverviewMap)
-    Vue.component('bm-geolocation', BmGeolocation)
-    Vue.component('bm-copyright', BmCopyright)
-    Vue.component('bm-city-list', BmCityList)
-    Vue.component('bm-panorama', BmPanorama)
-    Vue.component('bm-control', BmControl)
+    // Vue.component('bm-scale', BmScale)
+    // Vue.component('bm-navigation', BmNavigation)
+    // Vue.component('bm-map-type', BmMapType)
+    // Vue.component('bm-overview-map', BmOverviewMap)
+    // Vue.component('bm-geolocation', BmGeolocation)
+    // Vue.component('bm-copyright', BmCopyright)
+    // Vue.component('bm-city-list', BmCityList)
+    // Vue.component('bm-panorama', BmPanorama)
+    // Vue.component('bm-control', BmControl)
 
-    Vue.component('bm-marker', BmMarker)
-    Vue.component('bm-point-collection', BmPointCollection)
-    Vue.component('bm-polyline', BmPolyline)
-    Vue.component('bm-polygon', BmPolygon)
-    Vue.component('bm-circle', BmCircle)
-    Vue.component('bm-ground', BmGround)
-    Vue.component('bm-label', BmLabel)
-    Vue.component('bm-info-window', BmInfoWindow)
-    Vue.component('bm-overlay', BmOverlay)
+    // Vue.component('bm-marker', BmMarker)
+    // Vue.component('bm-point-collection', BmPointCollection)
+    // Vue.component('bm-polyline', BmPolyline)
+    // Vue.component('bm-polygon', BmPolygon)
+    // Vue.component('bm-circle', BmCircle)
+    // Vue.component('bm-ground', BmGround)
+    // Vue.component('bm-label', BmLabel)
+    // Vue.component('bm-info-window', BmInfoWindow)
+    // Vue.component('bm-overlay', BmOverlay)
 
-    Vue.component('bm-context-menu', BmContextMenu)
-    Vue.component('bm-context-menu-item', BmContextMenuItem)
+    // Vue.component('bm-context-menu', BmContextMenu)
+    // Vue.component('bm-context-menu-item', BmContextMenuItem)
 
-    Vue.component('bm-local-search', BmLocalSearch)
-    Vue.component('bm-transit', BmTransit)
-    Vue.component('bm-walking', BmWalking)
-    Vue.component('bm-driving', BmDriving)
-    Vue.component('bm-bus', BmBus)
+    // Vue.component('bm-local-search', BmLocalSearch)
+    // Vue.component('bm-transit', BmTransit)
+    // Vue.component('bm-walking', BmWalking)
+    // Vue.component('bm-driving', BmDriving)
+    // Vue.component('bm-bus', BmBus)
 
-    Vue.component('bm-tile', BmTile)
-    Vue.component('bm-traffic', BmTraffic)
+    // Vue.component('bm-tile', BmTile)
+    // Vue.component('bm-traffic', BmTraffic)
 
-    Vue.component('bm-auto-complete', BmAutoComplete)
-    Vue.component('bm-boundary', BmBoundary)
+    // Vue.component('bm-auto-complete', BmAutoComplete)
+    // Vue.component('bm-boundary', BmBoundary)
   }
 }
 
 export {
-  BaiduMap, BmView,
+  BMapGL, BmView,
   BmScale, BmNavigation, BmMapType, BmOverviewMap, BmGeolocation, BmCopyright, BmCityList, BmPanorama, BmControl,
   BmMarker, BmPointCollection, BmPolyline, BmPolygon, BmCircle, BmGround, BmLabel, BmInfoWindow, BmOverlay,
   BmContextMenu, BmContextMenuItem,
