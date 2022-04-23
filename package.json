@@ -1,6 +1,6 @@
 {
-  "name": "vue-baidu-map",
-  "version": "0.21.22",
+  "name": "vue-baidu-mapgl",
+  "version": "0.1.0",
   "description": "Baidu Map Component for Vue 2.0",
   "main": "index.js",
   "directories": {
