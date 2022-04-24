@@ -247,26 +247,25 @@ export default {
       this.init(BMap)
     },
     getMapScript () {
-      if (!global.BMap) {
+      if (!global.BMapGL) {
         const ak = this.ak || this._BMap().ak
-        global.BMap = {}
-        global.BMap._preloader = new Promise((resolve, reject) => {
+        global.BMapGL = {}
+        global.BMapGL._preloader = new Promise((resolve, reject) => {
           global._initBaiduMap = function () {
-            global.BMap = global.BMapGL || window.BMapGL
-            resolve(global.BMap)
+            resolve(global.BMapGL)
             global.document.body.removeChild($script)
-            global.BMap._preloader = null
+            global.BMapGL._preloader = null
             global._initBaiduMap = null
           }
           const $script = document.createElement('script')
           global.document.body.appendChild($script)
           $script.src = `//api.map.baidu.com/api?type=webgl&v=1.0&ak=${ak}&callback=_initBaiduMap`
         })
-        return global.BMap._preloader
-      } else if (!global.BMap._preloader) {
-        return Promise.resolve(global.BMap)
+        return global.BMapGL._preloader
+      } else if (!global.BMapGL._preloader) {
+        return Promise.resolve(global.BMapGL)
       } else {
-        return global.BMap._preloader
+        return global.BMapGL._preloader
       }
     },
     reset () {
