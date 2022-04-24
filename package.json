@@ -18,7 +18,7 @@
   "types": "types/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dafrok/vue-baidu-map.git"
+    "url": "git+https://github.com/ronliruonan/vue-baidu-mapgl.git"
   },
   "keywords": [
     "vue",
@@ -31,9 +31,9 @@
   "author": "Dafrok <o.o@mug.dog>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Dafrok/vue-baidu-map/issues"
+    "url": "https://github.com/ronliruonan/vue-baidu-mapgl/issues"
   },
-  "homepage": "https://github.com/Dafrok/vue-baidu-map#readme",
+  "homepage": "https://github.com/ronliruonan/vue-baidu-mapgl#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
