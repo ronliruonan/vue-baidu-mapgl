@@ -1,6 +1,6 @@
 <template>
   <div v-if="paths.length">
-    <bm-polygon
+    <bmap-gl-polygon
       v-for="(path, index) of paths"
       :key="index"
       :path="path"
@@ -48,8 +48,8 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, name} = this
-      const bd = new BMap.Boundary()
+      const {BMapGL, name} = this
+      const bd = new BMapGL.Boundary()
       bd.get(name, data => {
         this.paths = data.boundaries.map(boundary => (boundary || []).split(';')
            .map(point => (([lng, lat]) => ({lng, lat}))(point.split(',').map(p => +p))))

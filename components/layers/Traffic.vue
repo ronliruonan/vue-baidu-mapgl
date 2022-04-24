@@ -2,7 +2,7 @@
 import commonMixin from '../base/mixins/common.js'
 
 export default {
-  name: 'bm-triffic',
+  name: 'bmap-gl-triffic',
   render (h) {},
   mixins: [commonMixin('layer')],
   props: {
@@ -23,8 +23,8 @@ export default {
   },
   methods: {
     load () {
-      const {pridictDate, BMap, map} = this
-      this.originInstance = new BMap.TrafficLayer({
+      const {pridictDate, BMapGL, map} = this
+      this.originInstance = new BMapGL.TrafficLayer({
         pridictDate
       })
       map.addTileLayer(this.originInstance)

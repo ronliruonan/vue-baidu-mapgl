@@ -4,7 +4,7 @@ import bindEvents from '../base/bindEvent.js'
 import {createPoint, createSize} from '../base/factory.js'
 
 export default {
-  name: 'bm-label',
+  name: 'bmap-gl-label',
   render () {},
   mixins: [commonMixin('overlay')],
   props: {
@@ -34,32 +34,32 @@ export default {
       this.originInstance.setTitle(val)
     },
     'offset.width' (val, oldVal) {
-      const {BMap} = this
+      const {BMapGL} = this
       if (val.toString() !== oldVal.toString()) {
-        this.originInstance.setOffset(createSize(BMap, {width: val, height: this.offset.height}))
+        this.originInstance.setOffset(createSize(BMapGL, {width: val, height: this.offset.height}))
       }
     },
     'offset.height' (val, oldVal) {
-      const {BMap} = this
+      const {BMapGL} = this
       if (val.toString() !== oldVal.toString()) {
-        this.originInstance.setOffset(createSize(BMap, {
+        this.originInstance.setOffset(createSize(BMapGL, {
           width: this.offset.width,
           height: val
         }))
       }
     },
     'position.lng' (val, oldVal) {
-      const {BMap} = this
+      const {BMapGL} = this
       const lng = val
       if (val.toString() !== oldVal.toString() && lng >= -180 && lng <= 180) {
-        this.originInstance.setCenter(createPoint(BMap, {lng, lat: this.center.lat}))
+        this.originInstance.setCenter(createPoint(BMapGL, {lng, lat: this.center.lat}))
       }
     },
     'position.lat' (val, oldVal) {
-      const {BMap} = this
+      const {BMapGL} = this
       const lat = val
       if (val.toString() !== oldVal.toString() && lat >= -74 && lat <= 74) {
-        this.originInstance.setCenter(createPoint(BMap, {lng: this.center.lng, lat}))
+        this.originInstance.setCenter(createPoint(BMapGL, {lng: this.center.lng, lat}))
       }
     },
     labelStyle: {
@@ -77,10 +77,10 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, content, title, offset, position, labelStyle, zIndex, massClear, $parent} = this
-      const overlay = new BMap.Label(content, {
-        offset: createSize(BMap, offset),
-        position: createPoint(BMap, position),
+      const {BMapGL, map, content, title, offset, position, labelStyle, zIndex, massClear, $parent} = this
+      const overlay = new BMapGL.Label(content, {
+        offset: createSize(BMapGL, offset),
+        position: createPoint(BMapGL, position),
         enableMassClear: massClear
       })
       this.originInstance = overlay

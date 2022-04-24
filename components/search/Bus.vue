@@ -9,7 +9,7 @@ import {isPoint} from '../base/util.js'
 import commonMixin from '../base/mixins/common.js'
 
 export default {
-  name: 'bm-bus',
+  name: 'bmap-gl-bus',
   mixins: [commonMixin('search')],
   props: {
     location: {
@@ -60,9 +60,9 @@ export default {
     },
     load () {
       const instance = this
-      const {location, selectFirstResult, autoViewport, highlightMode, keyword, search, BMap, map, originInstance} = this
-      const _location = location ? isPoint(location) ? createPoint(BMap, location) : location : map
-      const route = this.originInstance = new BMap.BusLineSearch(_location, {
+      const {location, selectFirstResult, autoViewport, highlightMode, keyword, search, BMapGL, map, originInstance} = this
+      const _location = location ? isPoint(location) ? createPoint(BMapGL, location) : location : map
+      const route = this.originInstance = new BMapGL.BusLineSearch(_location, {
         renderOptions: {
           map,
           panel: this.$el,

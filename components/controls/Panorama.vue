@@ -3,7 +3,7 @@ import commonMixin from '../base/mixins/common.js'
 import {createSize} from '../base/factory.js'
 
 export default {
-  name: 'bm-panorama',
+  name: 'bmap-gl-panorama',
   mixins: [commonMixin('control')],
   render () {},
   props: ['anchor', 'offset'],
@@ -17,10 +17,10 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, anchor, offset} = this
-      this.originInstance = new BMap.PanoramaControl({
+      const {BMapGL, map, anchor, offset} = this
+      this.originInstance = new BMapGL.PanoramaControl({
         anchor: global[anchor],
-        offset: offset && createSize(BMap, offset)
+        offset: offset && createSize(BMapGL, offset)
       })
       map.addControl(this.originInstance)
     }

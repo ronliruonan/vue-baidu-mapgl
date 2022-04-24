@@ -9,7 +9,7 @@ import commonMixin from '../base/mixins/common.js'
 import {createSize} from '../base/factory.js'
 
 export default {
-  name: 'bm-control',
+  name: 'bmap-gl-control',
   mixins: [commonMixin('control')],
   props: ['anchor', 'offset'],
   watch: {
@@ -22,12 +22,12 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, anchor, offset, $el} = this
+      const {BMapGL, map, anchor, offset, $el} = this
       const Control = function () {
         this.defaultAnchor = global[anchor || 'BMAP_ANCHOR_TOP_LEFT']
-        this.defaultOffset = createSize(BMap, offset)
+        this.defaultOffset = createSize(BMapGL, offset)
       }
-      Control.prototype = new BMap.Control()
+      Control.prototype = new BMapGL.Control()
       Control.prototype.initialize = map => map.getContainer().appendChild($el)
       this.originInstance = new Control(anchor, offset)
       map.addControl(this.originInstance)

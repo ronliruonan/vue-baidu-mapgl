@@ -1,10 +1,10 @@
 <script>
 import commonMixin from '../base/mixins/common.js'
-import {createSize} from '../base/factory.js'
+import { createSize } from '../base/factory.js'
 
 export default {
-  name: 'bmap-gl-city-list',
-  render () {},
+  name: 'bmp-gl-zoom',
+  render () { },
   mixins: [commonMixin('control')],
   props: {
     anchor: {
@@ -24,17 +24,10 @@ export default {
   },
   methods: {
     load () {
-      const {BMapGL, map, anchor, offset} = this
-      const self = this
-      this.originInstance = new BMapGL.CityListControl({
+      const { BMapGL, map, anchor, offset } = this
+      this.originInstance = new BMapGL.ZoomControl({ // 添加缩放控件
         anchor: global[anchor],
-        offset: offset && createSize(BMapGL, offset),
-        onChangeBefore () {
-          self.$emit('changeBefore')
-        },
-        onChangeAfter () {
-          self.$emit('changeAfter')
-        }
+        offset: offset && createSize(BMapGL, offset)
       })
       map.addControl(this.originInstance)
     }

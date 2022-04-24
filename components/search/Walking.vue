@@ -10,7 +10,7 @@ import {isPoint, getPosition} from '../base/util.js'
 import commonMixin from '../base/mixins/common.js'
 
 export default {
-  name: 'bm-walking',
+  name: 'bmap-gl-walking',
   mixins: [commonMixin('search')],
   props: {
     location: {
@@ -46,15 +46,15 @@ export default {
     },
     start: {
       handler (val) {
-        const {originInstance, end, BMap} = this
-        originInstance.search(getPosition(BMap, val), getPosition(BMap, end))
+        const {originInstance, end, BMapGL} = this
+        originInstance.search(getPosition(BMapGL, val), getPosition(BMapGL, end))
       },
       deep: true
     },
     end: {
       handler (val) {
-        const {originInstance, start, BMap} = this
-        originInstance.search(getPosition(BMap, start), getPosition(BMap, val))
+        const {originInstance, start, BMapGL} = this
+        originInstance.search(getPosition(BMapGL, start), getPosition(BMapGL, val))
       },
       deep: true
     },
@@ -78,9 +78,9 @@ export default {
     },
     load () {
       const instance = this
-      const {map, BMap, location, selectFirstResult, autoViewport, highlightMode, search, start, end, originInstance} = this
-      const _location = location ? isPoint(location) ? createPoint(BMap, location) : location : map
-      const route = this.originInstance = new BMap.WalkingRoute(_location, {
+      const {map, BMapGL, location, selectFirstResult, autoViewport, highlightMode, search, start, end, originInstance} = this
+      const _location = location ? isPoint(location) ? createPoint(BMapGL, location) : location : map
+      const route = this.originInstance = new BMapGL.WalkingRoute(_location, {
         renderOptions: {
           map,
           // panel: panel && this.$el,
@@ -108,7 +108,7 @@ export default {
           instance.$emit('resultshtmlset', e)
         }
       })
-      search(isPoint(start) ? createPoint(BMap, start) : start, isPoint(end) ? createPoint(BMap, end) : end)
+      search(isPoint(start) ? createPoint(BMapGL, start) : start, isPoint(end) ? createPoint(BMapGL, end) : end)
     }
   }
 }

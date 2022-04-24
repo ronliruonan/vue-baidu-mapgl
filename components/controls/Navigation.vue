@@ -3,7 +3,7 @@ import commonMixin from '../base/mixins/common.js'
 import {createSize} from '../base/factory.js'
 
 export default {
-  name: 'bm-navigation',
+  name: 'bmap-gl-navigation',
   render () {},
   mixins: [commonMixin('control')],
   props: {
@@ -40,10 +40,10 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, anchor, offset, type, showZoomInfo, enableGeolocation} = this
-      this.originInstance = new BMap.NavigationControl({
+      const {BMapGL, map, anchor, offset, type, showZoomInfo, enableGeolocation} = this
+      this.originInstance = new BMapGL.NavigationControl({
         anchor: global[anchor],
-        offset: offset && createSize(BMap, offset),
+        offset: offset && createSize(BMapGL, offset),
         type: global[type],
         showZoomInfo,
         enableGeolocation

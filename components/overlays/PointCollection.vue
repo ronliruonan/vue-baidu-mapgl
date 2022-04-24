@@ -5,7 +5,7 @@ import {createPoint} from '../base/factory.js'
 
 export default {
   render () {},
-  name: 'bm-point-collection',
+  name: 'bmap-gl-point-collection',
   mixins: [commonMixin('overlay')],
   props: {
     points: {
@@ -62,8 +62,8 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, points, shape, color, size} = this
-      const overlay = this.originInstance = new BMap.PointCollection(points.map(p => createPoint(BMap, p)), {
+      const {BMapGL, map, points, shape, color, size} = this
+      const overlay = this.originInstance = new BMapGL.PointCollection(points.map(p => createPoint(BMapGL, p)), {
         shape: global[shape],
         color,
         size: global[size]

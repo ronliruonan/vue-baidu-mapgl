@@ -2,7 +2,7 @@ import { BaiduMapComponent } from './base/component'
 
 export declare class Item extends BaiduMapComponent {
   /**
-   * 点击菜单时执行的回调函数，第一个参数为 {BMap, map, target, pixel, point}
+   * 点击菜单时执行的回调函数，第一个参数为 {BMapGL, map, target, pixel, point}
    */
   callback (params: any): Function
   /**

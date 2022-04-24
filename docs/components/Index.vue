@@ -1,7 +1,7 @@
 <template lang="pug">
 section.index
   .content
-    img(src='//dafrok.github.io/vue-baidu-map/favicon.png')
+    img(src='//dafrok.github.io/vue-baidu-map-plus/favicon.png')
     h1 VUE BAIDU MAP
     .links
       router-link(to="/zh/index") 中文

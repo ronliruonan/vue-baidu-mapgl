@@ -4,7 +4,7 @@ import commonMixin from '../base/mixins/common.js'
 import bindEvents from '../base/bindEvent.js'
 
 export default {
-  name: 'bm-overview-map',
+  name: 'bmap-gl-overview-map',
   mixins: [commonMixin('control')],
   render () {},
   props: {
@@ -37,15 +37,15 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, isOpen, size, offset, anchor} = this
+      const {BMapGL, map, isOpen, size, offset, anchor} = this
       const mapTypes = []
       this.mapTypes && this.mapTypes.forEach(item => {
         mapTypes.push(global[item])
       })
-      this.originInstance = new BMap.OverviewMapControl({
+      this.originInstance = new BMapGL.OverviewMapControl({
         anchor: global[anchor],
-        offset: createSize(BMap, offset),
-        size: createSize(BMap, size),
+        offset: createSize(BMapGL, offset),
+        size: createSize(BMapGL, size),
         isOpen
       })
       bindEvents.call(this, this.originInstance)

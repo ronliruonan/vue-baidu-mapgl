@@ -10,7 +10,7 @@ import bindEvents from '../base/bindEvent.js'
 import { checkType } from '../base/util.js'
 
 export default {
-  name: 'bm-map',
+  name: 'bmap-gl-map',
   props: {
     ak: {
       type: String
@@ -85,15 +85,15 @@ export default {
       }
     },
     'center.lng' (val, oldVal) {
-      const { BMap, map, zoom, center } = this
+      const { BMapGL, map, zoom, center } = this
       if (val !== oldVal && val >= -180 && val <= 180) {
-        map.centerAndZoom(new BMap.Point(val, center.lat), zoom)
+        map.centerAndZoom(new BMapGL.Point(val, center.lat), zoom)
       }
     },
     'center.lat' (val, oldVal) {
-      const { BMap, map, zoom, center } = this
+      const { BMapGL, map, zoom, center } = this
       if (val !== oldVal && val >= -74 && val <= 74) {
-        map.centerAndZoom(new BMap.Point(center.lng, val), zoom)
+        map.centerAndZoom(new BMapGL.Point(center.lng, val), zoom)
       }
     },
     zoom (val, oldVal) {
@@ -209,18 +209,18 @@ export default {
       pinchToZoom ? map.enablePinchToZoom() : map.disablePinchToZoom()
       autoResize ? map.enableAutoResize() : map.disableAutoResize()
     },
-    init (BMap) {
+    init (BMapGL) {
       if (this.map) {
         return
       }
       let $el = this.$refs.view
       for (let $node of this.$slots.default || []) {
-        if ($node.componentOptions && $node.componentOptions.tag === 'bm-view') {
+        if ($node.componentOptions && $node.componentOptions.tag === 'bmap-gl-view') {
           this.hasBmView = true
           $el = $node.elm
         }
       }
-      const map = new BMap.Map($el, { enableHighResolution: this.highResolution, enableMapClick: this.mapClick })
+      const map = new BMapGL.Map($el, { enableHighResolution: this.highResolution, enableMapClick: this.mapClick })
       this.map = map
       const { setMapOptions, zoom, getCenterPoint } = this
       // 1 && theme ? map.setMapStyle({ styleJson: theme }) : map.setMapStyle(mapStyle)
@@ -229,26 +229,27 @@ export default {
       // 此处强行初始化一次地图 回避一个由于错误的 center 字符串导致初始化失败抛出的错误
       map.reset()
       map.centerAndZoom(getCenterPoint(), zoom)
-      this.$emit('ready', { BMap, map })
+      this.$emit('ready', { BMapGL, map })
       // Debug
       // global.map = map
       // global.mapComponent = this
     },
     getCenterPoint () {
-      const { center, BMap } = this
+      const { center, BMapGL } = this
       switch (checkType(center)) {
         case 'String': return center
-        case 'Object': return new BMap.Point(center.lng, center.lat)
-        default: return new BMap.Point()
+        case 'Object': return new BMapGL.Point(center.lng, center.lat)
+        default: return new BMapGL.Point()
       }
     },
-    initMap (BMap) {
-      this.BMap = BMap
-      this.init(BMap)
+    initMap (BMapGL) {
+      this.BMapGL = BMapGL
+      this.init(BMapGL)
     },
     getMapScript () {
       if (!global.BMapGL) {
-        const ak = this.ak || this._BMap().ak
+        console.warn(this)
+        const ak = this.ak || this._BMapGL().ak
         global.BMapGL = {}
         global.BMapGL._preloader = new Promise((resolve, reject) => {
           global._initBaiduMap = function () {

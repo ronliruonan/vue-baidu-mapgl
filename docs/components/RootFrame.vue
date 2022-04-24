@@ -14,7 +14,7 @@ div
     md-toolbar(md-theme="white").logo
       router-link.link(:to="`/`")
         img(src="//dafrok.github.io/vue-baidu-map/favicon.png")
-        div Vue Baidu Map
+        div Vue Baidu Map Plus
     slot(name="side-nav")
   .page-content
     slot(name="page-content")

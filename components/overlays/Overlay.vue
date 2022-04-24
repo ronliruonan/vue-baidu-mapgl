@@ -8,7 +8,7 @@
 import commonMixin from '../base/mixins/common.js'
 
 export default {
-  name: 'bm-overlay',
+  name: 'bmap-gl-overlay',
   mixins: [commonMixin('overlay')],
   props: {
     pane: {
@@ -22,12 +22,12 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, $el, pane} = this
+      const {BMapGL, map, $el, pane} = this
       const $emit = this.$emit.bind(this)
-      class CustomOverlay extends BMap.Overlay {
+      class CustomOverlay extends BMapGL.Overlay {
         initialize () {
           $emit('initialize', {
-            BMap,
+            BMapGL,
             map,
             el: $el,
             overlay: this
@@ -39,7 +39,7 @@ export default {
         }
         draw () {
           $emit('draw', {
-            BMap,
+            BMapGL,
             map,
             el: $el,
             overlay: this

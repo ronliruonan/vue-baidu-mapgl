@@ -4,7 +4,7 @@ import bindEvents from '../base/bindEvent.js'
 import {createPoint} from '../base/factory.js'
 
 export default {
-  name: 'bm-polygon',
+  name: 'bmap-gl-polygon',
   render () {},
   mixins: [commonMixin('overlay')],
   props: {
@@ -82,8 +82,8 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, path, strokeColor, strokeWeight, strokeOpacity, strokeStyle, fillColor, fillOpacity, editing, massClear, clicking} = this
-      const overlay = new BMap.Polygon(path.map(item => createPoint(BMap, {lng: item.lng, lat: item.lat})), {
+      const {BMapGL, map, path, strokeColor, strokeWeight, strokeOpacity, strokeStyle, fillColor, fillOpacity, editing, massClear, clicking} = this
+      const overlay = new BMapGL.Polygon(path.map(item => createPoint(BMapGL, {lng: item.lng, lat: item.lat})), {
         strokeColor,
         strokeWeight,
         strokeOpacity,

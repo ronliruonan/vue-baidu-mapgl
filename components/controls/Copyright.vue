@@ -3,7 +3,7 @@ import commonMixin from '../base/mixins/common.js'
 import {createSize} from '../base/factory.js'
 
 export default {
-  name: 'bm-copyright',
+  name: 'bmap-gl-copyright',
   render () {},
   mixins: [commonMixin('control')],
   props: ['anchor', 'offset', 'copyright'],
@@ -20,16 +20,16 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, offset, anchor, updateCopyrightList} = this
-      this.originInstance = new BMap.CopyrightControl({
+      const {BMapGL, map, offset, anchor, updateCopyrightList} = this
+      this.originInstance = new BMapGL.CopyrightControl({
         anchor: global[anchor],
-        offset: offset && createSize(BMap, offset)
+        offset: offset && createSize(BMapGL, offset)
       })
       updateCopyrightList()
       map.addControl(this.originInstance)
     },
     updateCopyrightList () {
-      const {BMap, map} = this
+      const {BMapGL, map} = this
       const {removeCopyright, getCopyrightCollection} = this.originInstance
       const copyrightList = getCopyrightCollection()
       copyrightList && copyrightList.forEach(item => {
@@ -37,7 +37,7 @@ export default {
       })
       this.copyright && this.copyright.forEach(item => {
         const bounds = item.bounds
-          ? new BMap.Bounds(new BMap.Point(item.bounds.sw.lng, item.bounds.sw.lat), new BMap.Point(item.bounds.ne.lng, item.bounds.ne.lat))
+          ? new BMapGL.Bounds(new BMapGL.Point(item.bounds.sw.lng, item.bounds.sw.lat), new BMapGL.Point(item.bounds.ne.lng, item.bounds.ne.lat))
           : map.getBounds()
         this.originInstance.addCopyright({
           id: item.id,

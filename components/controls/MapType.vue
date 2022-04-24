@@ -3,7 +3,7 @@ import commonMixin from '../base/mixins/common.js'
 import {createSize} from '../base/factory.js'
 
 export default {
-  name: 'bm-map-type',
+  name: 'bmap-gl-map-type',
   render () {},
   mixins: [commonMixin('control')],
   props: ['type', 'mapTypes', 'anchor', 'offset'],
@@ -23,12 +23,12 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, anchor, offset, type} = this
+      const {BMapGL, map, anchor, offset, type} = this
       const mapTypes = []
       this.mapTypes && this.mapTypes.forEach(item => mapTypes.push(global[item]))
-      this.originInstance = new BMap.MapTypeControl({
+      this.originInstance = new BMapGL.MapTypeControl({
         anchor: global[anchor],
-        offset: offset && createSize(BMap, offset),
+        offset: offset && createSize(BMapGL, offset),
         type: global[type],
         mapTypes
       })

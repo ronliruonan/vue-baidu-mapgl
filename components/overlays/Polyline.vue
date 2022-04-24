@@ -4,7 +4,7 @@ import bindEvents from '../base/bindEvent.js'
 import {createPoint, createIconSequence} from '../base/factory.js'
 
 export default {
-  name: 'bm-polyline',
+  name: 'bmap-gl-polyline',
   render () {},
   mixins: [commonMixin('overlay')],
   props: {
@@ -79,16 +79,16 @@ export default {
   },
   computed: {
     iconSequences () {
-      const {BMap, icons} = this
+      const {BMapGL, icons} = this
       return icons.map(item => {
-        return createIconSequence(BMap, item)
+        return createIconSequence(BMapGL, item)
       })
     }
   },
   methods: {
     load () {
-      const {BMap, map, path, strokeColor, strokeWeight, strokeOpacity, strokeStyle, editing, massClear, clicking, iconSequences} = this
-      const overlay = new BMap.Polyline(path.map(item => createPoint(BMap, {lng: item.lng, lat: item.lat})), {
+      const {BMapGL, map, path, strokeColor, strokeWeight, strokeOpacity, strokeStyle, editing, massClear, clicking, iconSequences} = this
+      const overlay = new BMapGL.Polyline(path.map(item => createPoint(BMapGL, {lng: item.lng, lat: item.lat})), {
         strokeColor,
         strokeWeight,
         strokeOpacity,

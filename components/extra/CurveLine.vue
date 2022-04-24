@@ -81,8 +81,8 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, points, strokeColor, strokeWeight, strokeOpacity, strokeStyle, editing, massClear, clicking} = this
-      const overlay = new CurveLine(points.map(item => createPoint(BMap, item)), {
+      const {BMapGL, map, points, strokeColor, strokeWeight, strokeOpacity, strokeStyle, editing, massClear, clicking} = this
+      const overlay = new CurveLine(points.map(item => createPoint(BMapGL, item)), {
         strokeColor,
         strokeWeight,
         strokeOpacity,

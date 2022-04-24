@@ -3,7 +3,7 @@ import commonMixin from '../base/mixins/common.js'
 import {createBounds} from '../base/factory.js'
 
 export default {
-  name: 'bm-tile',
+  name: 'bmap-gl-tile',
   render (h) {},
   mixins: [commonMixin('layer')],
   props: {
@@ -35,8 +35,8 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, transparentPng, tileUrlTemplate, copyright, zIndex} = this
-      this.originInstance = new BMap.TileLayer({
+      const {BMapGL, map, transparentPng, tileUrlTemplate, copyright, zIndex} = this
+      this.originInstance = new BMapGL.TileLayer({
         transparentPng,
         tileUrlTemplate,
         copyright: copyright && {

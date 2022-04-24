@@ -1,47 +1,47 @@
-export function createPoint (BMap, options = {}) {
+export function createPoint (BMapGLGL, options = {}) {
   const {lng, lat} = options
-  return new BMap.Point(lng, lat)
+  return new BMapGLGL.Point(lng, lat)
 }
 
-export function createPixel (BMap, options = {}) {
+export function createPixel (BMapGLGL, options = {}) {
   const {x, y} = options
-  return new BMap.Pixel(x, y)
+  return new BMapGLGL.Pixel(x, y)
 }
 
-export function createBounds (BMap, options = {}) {
+export function createBounds (BMapGLGL, options = {}) {
   const {sw, ne} = options
-  return new BMap.Bounds(createPoint(BMap, sw), createPoint(BMap, ne))
+  return new BMapGLGL.Bounds(createPoint(BMapGLGL, sw), createPoint(BMapGLGL, ne))
 }
 
-export function createSize (BMap, options = {}) {
+export function createSize (BMapGLGL, options = {}) {
   const {width, height} = options
-  return new BMap.Size(width, height)
+  return new BMapGLGL.Size(width, height)
 }
 
-export function createIcon (BMap, options = {}) {
+export function createIcon (BMapGLGL, options = {}) {
   const {url, size, opts = {}} = options
-  return new BMap.Icon(url, createSize(BMap, size), {
-    anchor: opts.anchor && createSize(BMap, opts.anchor),
-    imageSize: opts.imageSize && createSize(BMap, opts.imageSize),
-    imageOffset: opts.imageOffset && createSize(BMap, opts.imageOffset),
-    infoWindowAnchor: opts.infoWindowAnchor && createSize(BMap, opts.infoWindowAnchor),
+  return new BMapGLGL.Icon(url, createSize(BMapGLGL, size), {
+    anchor: opts.anchor && createSize(BMapGLGL, opts.anchor),
+    imageSize: opts.imageSize && createSize(BMapGLGL, opts.imageSize),
+    imageOffset: opts.imageOffset && createSize(BMapGLGL, opts.imageOffset),
+    infoWindowAnchor: opts.infoWindowAnchor && createSize(BMapGLGL, opts.infoWindowAnchor),
     printImageUrl: opts.printImageUrl
   })
 }
 
-export function createLabel (BMap, options = {}) {
+export function createLabel (BMapGL, options = {}) {
   const {content, opts} = options
-  return new BMap.Label(content, {
-    offset: opts.offset && createSize(BMap, opts.offset),
-    position: opts.position && createPoint(BMap, opts.position),
+  return new BMapGL.Label(content, {
+    offset: opts.offset && createSize(BMapGL, opts.offset),
+    position: opts.position && createPoint(BMapGL, opts.position),
     enableMassClear: opts.enableMassClear
   })
 }
 
-export function createSymbol (BMap, options = {}) {
+export function createSymbol (BMapGL, options = {}) {
   const {path, opts} = options
-  return new BMap.Symbol(global[path] || path, {
-    anchor: opts.anchor && createSize(BMap, opts.anchor),
+  return new BMapGL.Symbol(global[path] || path, {
+    anchor: opts.anchor && createSize(BMapGL, opts.anchor),
     fillColor: opts.fillColor,
     fillOpacity: opts.fillOpacity,
     scale: opts.scale,
@@ -52,10 +52,10 @@ export function createSymbol (BMap, options = {}) {
   })
 }
 
-export function createIconSequence (BMap, options = {}) {
+export function createIconSequence (BMapGL, options = {}) {
   const {symbol, offset, repeat, fixedRotation} = options
-  return new BMap.IconSequence(
-    symbol && createSymbol(BMap, symbol),
+  return new BMapGL.IconSequence(
+    symbol && createSymbol(BMapGL, symbol),
     offset,
     repeat,
     fixedRotation

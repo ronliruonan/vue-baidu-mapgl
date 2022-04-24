@@ -4,7 +4,7 @@ import bindEvents from '../base/bindEvent.js'
 import {createIcon, createSize} from '../base/factory.js'
 
 export default {
-  name: 'bm-geolocation',
+  name: 'bmap-gl-geolocation',
   render () {},
   mixins: [commonMixin('control')],
   props: {
@@ -43,13 +43,13 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, anchor, showAddressBar, autoLocation, locationIcon, offset} = this
-      this.originInstance = new BMap.GeolocationControl({
+      const {BMapGL, map, anchor, showAddressBar, autoLocation, locationIcon, offset} = this
+      this.originInstance = new BMapGL.GeolocationControl({
         anchor: global[anchor],
         showAddressBar,
         enableAutoLocation: autoLocation,
-        offset: offset && createSize(BMap, offset),
-        locationIcon: locationIcon && createIcon(BMap, locationIcon)
+        offset: offset && createSize(BMapGL, offset),
+        locationIcon: locationIcon && createIcon(BMapGL, locationIcon)
       })
       bindEvents.call(this, this.originInstance)
       map.addControl(this.originInstance)

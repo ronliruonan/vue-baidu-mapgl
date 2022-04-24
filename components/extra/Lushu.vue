@@ -5,7 +5,7 @@ import {createIcon} from '../base/factory.js'
 import Lushu from 'bmaplib.lushu'
 
 export default {
-  name: 'bm-lushu',
+  name: 'bmap-gl-lushu',
   render (h) {},
   mixins: [commonMixin('lushu')],
   props: {
@@ -63,7 +63,7 @@ export default {
     icon: {
       handler (val) {
         const {originInstance, content} = this
-        const newMarker = createIcon(BMap, val)
+        const newMarker = createIcon(BMapGL, val)
         originInstance._opts.icon = newMarker
         originInstance._marker = newMarker
       },
@@ -98,13 +98,13 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, path, landmarkPois, icon, speed, content, autoView, rotation, infoWindow, play} = this
+      const {BMapGL, map, path, landmarkPois, icon, speed, content, autoView, rotation, infoWindow, play} = this
       const lushu = this.originInstance = new Lushu(map, path, {
         enableRotation: rotation,
         landmarkPois,
         showInfoWindow: infoWindow,
         defaultContent: content,
-        icon: icon && createIcon(BMap, icon),
+        icon: icon && createIcon(BMapGL, icon),
         speed,
         autoView,
         onstart: e => {

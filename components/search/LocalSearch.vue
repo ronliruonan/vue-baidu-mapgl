@@ -10,7 +10,7 @@ import {isPoint} from '../base/util.js'
 import commonMixin from '../base/mixins/common.js'
 
 export default {
-  name: 'bm-local-search',
+  name: 'bmap-gl-local-search',
   mixins: [commonMixin('search')],
   props: {
     location: {
@@ -101,12 +101,12 @@ export default {
   },
   methods: {
     searchNearby (nearby) {
-      const {originInstance, keyword, customData, BMap} = this
-      originInstance.searchNearby(keyword, createPoint(BMap, nearby.center), nearby.radius, customData)
+      const {originInstance, keyword, customData, BMapGL} = this
+      originInstance.searchNearby(keyword, createPoint(BMapGL, nearby.center), nearby.radius, customData)
     },
     searchInBounds (bounds) {
-      const {originInstance, keyword, customData, BMap} = this
-      originInstance.searchInBounds(keyword, createBounds(BMap, bounds), customData)
+      const {originInstance, keyword, customData, BMapGL} = this
+      originInstance.searchInBounds(keyword, createBounds(BMapGL, bounds), customData)
     },
     search () {
       const {originInstance, keyword, forceLocal, customData, nearby, bounds, searchNearby, searchInBounds} = this
@@ -117,9 +117,9 @@ export default {
     },
     load () {
       const instance = this
-      const {map, BMap, search, pageCapacity, autoViewport, selectFirstResult, highlightMode, location, originInstance} = this
-      const _location = location ? isPoint(location) ? createPoint(BMap, location) : location : map
-      const route = this.originInstance = new BMap.LocalSearch(_location, {
+      const {map, BMapGL, search, pageCapacity, autoViewport, selectFirstResult, highlightMode, location, originInstance} = this
+      const _location = location ? isPoint(location) ? createPoint(BMapGL, location) : location : map
+      const route = this.originInstance = new BMapGL.LocalSearch(_location, {
         onMarkersSet (e) {
           instance.$emit('markersset', e)
         },

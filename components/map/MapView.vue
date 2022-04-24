@@ -4,6 +4,6 @@
 
 <script>
 export default {
-  name: 'bm-view'
+  name: 'bmap-gl-view'
 }
 </script>

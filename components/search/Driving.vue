@@ -10,7 +10,7 @@ import {isPoint, getPosition} from '../base/util.js'
 import commonMixin from '../base/mixins/common.js'
 
 export default {
-  name: 'bm-driving',
+  name: 'bmap-gl-driving',
   mixins: [commonMixin('search')],
   props: {
     location: {
@@ -55,8 +55,8 @@ export default {
     },
     start: {
       handler (val) {
-        const {originInstance, end, startCity, endCity, waypoints, BMap, getWaypoints} = this
-        originInstance.search(getPosition(BMap, val), getPosition(BMap, end), {
+        const {originInstance, end, startCity, endCity, waypoints, BMapGL, getWaypoints} = this
+        originInstance.search(getPosition(BMapGL, val), getPosition(BMapGL, end), {
           startCity,
           endCity,
           waypoints: getWaypoints(waypoints)
@@ -66,8 +66,8 @@ export default {
     },
     end: {
       handler (val) {
-        const {originInstance, start, startCity, endCity, waypoints, BMap, getWaypoints} = this
-        originInstance.search(getPosition(BMap, start), getPosition(BMap, val), {
+        const {originInstance, start, startCity, endCity, waypoints, BMapGL, getWaypoints} = this
+        originInstance.search(getPosition(BMapGL, start), getPosition(BMapGL, val), {
           startCity,
           endCity,
           waypoints: getWaypoints(waypoints)
@@ -128,16 +128,16 @@ export default {
       })
     },
     getWaypoints (waypoints) {
-      const {BMap} = this
+      const {BMapGL} = this
       if (waypoints) {
-        return waypoints.map(position => getPosition(BMap, position))
+        return waypoints.map(position => getPosition(BMapGL, position))
       }
     },
     load () {
       const instance = this
-      const {map, BMap, location, policy, selectFirstResult, autoViewport, highlightMode, search, start, end, startCity, endCity, waypoints, originInstance, getWaypoints} = this
-      const _location = location ? isPoint(location) ? createPoint(BMap, location) : location : map
-      const route = this.originInstance = new BMap.DrivingRoute(_location, {
+      const {map, BMapGL, location, policy, selectFirstResult, autoViewport, highlightMode, search, start, end, startCity, endCity, waypoints, originInstance, getWaypoints} = this
+      const _location = location ? isPoint(location) ? createPoint(BMapGL, location) : location : map
+      const route = this.originInstance = new BMapGL.DrivingRoute(_location, {
         renderOptions: {
           map,
           // panel: panel && this.$el,
@@ -166,7 +166,7 @@ export default {
           instance.$emit('resultshtmlset', e)
         }
       })
-      search(getPosition(BMap, start), getPosition(BMap, end), {
+      search(getPosition(BMapGL, start), getPosition(BMapGL, end), {
         startCity,
         endCity,
         waypoints: getWaypoints(waypoints)

@@ -11,7 +11,7 @@ import commonMixin from '../base/mixins/common.js'
 import bindEvents from '../base/bindEvent.js'
 
 export default {
-  name: 'bm-autocomplete',
+  name: 'bmap-gl-autocomplete',
   mixins: [commonMixin()],
   props: {
     types: {
@@ -37,12 +37,12 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, $el, types, location, sugStyle} = this
+      const {BMapGL, map, $el, types, location, sugStyle} = this
       const input = $el.querySelector('input')
       if (!input) {
         return
       }
-      this.originInstance = new BMap.Autocomplete({
+      this.originInstance = new BMapGL.Autocomplete({
         input,
         types,
         location: location || map,

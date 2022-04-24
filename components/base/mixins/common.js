@@ -28,11 +28,11 @@ class Mixin {
     this.methods = {
       ready () {
         const $parent = getParent(this.$parent)
-        const BMap = this.BMap = $parent.BMap
+        const BMapGL = this.BMapGL = $parent.BMapGL
         const map = this.map = $parent.map
         this.load()
         this.$emit('ready', {
-          BMap,
+          BMapGL,
           map
         })
       },
@@ -40,7 +40,7 @@ class Mixin {
         this.$emit(e.type.replace(/^on/, ''), e)
       },
       reload () {
-        this && this.BMap && this.$nextTick(() => {
+        this && this.BMapGL && this.$nextTick(() => {
           this.unload()
           this.$nextTick(this.load)
         })

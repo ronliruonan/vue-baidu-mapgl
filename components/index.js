@@ -1,39 +1,41 @@
 import BMapGL from './map/Map.vue'
-import BmView from './map/MapView.vue'
-import BmScale from './controls/Scale.vue'
-import BmNavigation from './controls/Navigation.vue'
-import BmMapType from './controls/MapType.vue'
-import BmOverviewMap from './controls/OverviewMap.vue'
-import BmGeolocation from './controls/Geolocation.vue'
-import BmCopyright from './controls/Copyright.vue'
-import BmCityList from './controls/CityList.vue'
-import BmPanorama from './controls/Panorama.vue'
-import BmControl from './controls/Control.vue'
-import BmMarker from './overlays/Marker.vue'
-import BmPointCollection from './overlays/PointCollection.vue'
-import BmPolyline from './overlays/Polyline.vue'
-import BmPolygon from './overlays/Polygon.vue'
-import BmCircle from './overlays/Circle.vue'
-import BmGround from './overlays/Ground.vue'
-import BmLabel from './overlays/Label.vue'
-import BmInfoWindow from './overlays/InfoWindow.vue'
-import BmOverlay from './overlays/Overlay.vue'
-import BmContextMenu from './context-menu/Menu.vue'
-import BmContextMenuItem from './context-menu/Item.vue'
-import BmLocalSearch from './search/LocalSearch.vue'
-import BmTransit from './search/Transit.vue'
-import BmWalking from './search/Walking.vue'
-import BmDriving from './search/Driving.vue'
-import BmBus from './search/Bus.vue'
-import BmTile from './layers/Tile.vue'
-import BmTraffic from './layers/Traffic.vue'
-import BmBoundary from './others/Boundary.vue'
-import BmAutoComplete from './others/AutoComplete.vue'
+import BMapGLView from './map/MapView.vue'
+import BMapGLScale from './controls/Scale.vue'
+import BMapGLNavigation from './controls/Navigation.vue'
+import BMapGLMapType from './controls/MapType.vue'
+import BMapGLOverviewMap from './controls/OverviewMap.vue'
+import BMapGLGeolocation from './controls/Geolocation.vue'
+import BMapGLCopyright from './controls/Copyright.vue'
+import BMapGLCityList from './controls/CityList.vue'
+import BMapGLPanorama from './controls/Panorama.vue'
+import BMapGLControl from './controls/Control.vue'
+import BMapGLMarker from './overlays/Marker.vue'
+import BMapGLPointCollection from './overlays/PointCollection.vue'
+import BMapGLPolyline from './overlays/Polyline.vue'
+import BMapGLPolygon from './overlays/Polygon.vue'
+import BMapGLCircle from './overlays/Circle.vue'
+import BMapGLGround from './overlays/Ground.vue'
+import BMapGLLabel from './overlays/Label.vue'
+import BMapGLInfoWindow from './overlays/InfoWindow.vue'
+import BMapGLOverlay from './overlays/Overlay.vue'
+import BMapGLContextMenu from './context-menu/Menu.vue'
+import BMapGLContextMenuItem from './context-menu/Item.vue'
+import BMapGLLocalSearch from './search/LocalSearch.vue'
+import BMapGLTransit from './search/Transit.vue'
+import BMapGLWalking from './search/Walking.vue'
+import BMapGLDriving from './search/Driving.vue'
+import BMapGLBus from './search/Bus.vue'
+import BMapGLTile from './layers/Tile.vue'
+import BMapGLTraffic from './layers/Traffic.vue'
+import BMapGLBoundary from './others/Boundary.vue'
+import BMapGLAutoComplete from './others/AutoComplete.vue'
 
-import BmlMarkerClusterer from './extra/MarkerClusterer.vue'
-import BmlLushu from './extra/Lushu.vue'
-import BmlHeatmap from './extra/Heatmap.vue'
-import BmlCurveLine from './extra/CurveLine.vue'
+import BMapGLlMarkerClusterer from './extra/MarkerClusterer.vue'
+import BMapGLlLushu from './extra/Lushu.vue'
+import BMapGLlHeatmap from './extra/Heatmap.vue'
+import BMapGLlCurveLine from './extra/CurveLine.vue'
+
+import BMapGLZoom from './controls/ZoomControl.vue'
 
 export default {
   install (Vue, options) {
@@ -41,58 +43,59 @@ export default {
     Vue.prototype._BMapGL = () => ({ak})
 
     Vue.component('bmap-gl', BMapGL)
-    // Vue.component('bm-view', BmView)
+    Vue.component('bmap-gl-zoom', BMapGLZoom)
+    Vue.component('bmap-gl-view', BMapGLView)
 
-    // Vue.component('bm-scale', BmScale)
-    // Vue.component('bm-navigation', BmNavigation)
-    // Vue.component('bm-map-type', BmMapType)
-    // Vue.component('bm-overview-map', BmOverviewMap)
-    // Vue.component('bm-geolocation', BmGeolocation)
-    // Vue.component('bm-copyright', BmCopyright)
-    // Vue.component('bm-city-list', BmCityList)
-    // Vue.component('bm-panorama', BmPanorama)
-    // Vue.component('bm-control', BmControl)
+    Vue.component('bmap-gl-scale', BMapGLScale)
+    Vue.component('bmap-gl-navigation', BMapGLNavigation)
+    Vue.component('bmap-gl-map-type', BMapGLMapType)
+    Vue.component('bmap-gl-overview-map', BMapGLOverviewMap)
+    Vue.component('bmap-gl-geolocation', BMapGLGeolocation)
+    Vue.component('bmap-gl-copyright', BMapGLCopyright)
+    Vue.component('bmap-gl-city-list', BMapGLCityList)
+    Vue.component('bmap-gl-panorama', BMapGLPanorama)
+    Vue.component('bmap-gl-control', BMapGLControl)
 
-    // Vue.component('bm-marker', BmMarker)
-    // Vue.component('bm-point-collection', BmPointCollection)
-    // Vue.component('bm-polyline', BmPolyline)
-    // Vue.component('bm-polygon', BmPolygon)
-    // Vue.component('bm-circle', BmCircle)
-    // Vue.component('bm-ground', BmGround)
-    // Vue.component('bm-label', BmLabel)
-    // Vue.component('bm-info-window', BmInfoWindow)
-    // Vue.component('bm-overlay', BmOverlay)
+    Vue.component('bmap-gl-marker', BMapGLMarker)
+    Vue.component('bmap-gl-point-collection', BMapGLPointCollection)
+    Vue.component('bmap-gl-polyline', BMapGLPolyline)
+    Vue.component('bmap-gl-polygon', BMapGLPolygon)
+    Vue.component('bmap-gl-circle', BMapGLCircle)
+    Vue.component('bmap-gl-ground', BMapGLGround)
+    Vue.component('bmap-gl-label', BMapGLLabel)
+    Vue.component('bmap-gl-info-window', BMapGLInfoWindow)
+    Vue.component('bmap-gl-overlay', BMapGLOverlay)
 
-    // Vue.component('bm-context-menu', BmContextMenu)
-    // Vue.component('bm-context-menu-item', BmContextMenuItem)
+    Vue.component('bmap-gl-context-menu', BMapGLContextMenu)
+    Vue.component('bmap-gl-context-menu-item', BMapGLContextMenuItem)
 
-    // Vue.component('bm-local-search', BmLocalSearch)
-    // Vue.component('bm-transit', BmTransit)
-    // Vue.component('bm-walking', BmWalking)
-    // Vue.component('bm-driving', BmDriving)
-    // Vue.component('bm-bus', BmBus)
+    Vue.component('bmap-gl-local-search', BMapGLLocalSearch)
+    Vue.component('bmap-gl-transit', BMapGLTransit)
+    Vue.component('bmap-gl-walking', BMapGLWalking)
+    Vue.component('bmap-gl-driving', BMapGLDriving)
+    Vue.component('bmap-gl-bus', BMapGLBus)
 
-    // Vue.component('bm-tile', BmTile)
-    // Vue.component('bm-traffic', BmTraffic)
+    Vue.component('bmap-gl-tile', BMapGLTile)
+    Vue.component('bmap-gl-traffic', BMapGLTraffic)
 
-    // Vue.component('bm-auto-complete', BmAutoComplete)
-    // Vue.component('bm-boundary', BmBoundary)
+    Vue.component('bmap-gl-auto-complete', BMapGLAutoComplete)
+    Vue.component('bmap-gl-boundary', BMapGLBoundary)
   }
 }
 
 export {
-  BMapGL, BmView,
-  BmScale, BmNavigation, BmMapType, BmOverviewMap, BmGeolocation, BmCopyright, BmCityList, BmPanorama, BmControl,
-  BmMarker, BmPointCollection, BmPolyline, BmPolygon, BmCircle, BmGround, BmLabel, BmInfoWindow, BmOverlay,
-  BmContextMenu, BmContextMenuItem,
-  BmLocalSearch, BmTransit, BmWalking, BmDriving, BmBus,
-  BmTile, BmTraffic,
-  BmBoundary, BmAutoComplete
+  BMapGL, BMapGLView,
+  BMapGLScale, BMapGLNavigation, BMapGLMapType, BMapGLOverviewMap, BMapGLGeolocation, BMapGLCopyright, BMapGLCityList, BMapGLPanorama, BMapGLControl,
+  BMapGLMarker, BMapGLPointCollection, BMapGLPolyline, BMapGLPolygon, BMapGLCircle, BMapGLGround, BMapGLLabel, BMapGLInfoWindow, BMapGLOverlay,
+  BMapGLContextMenu, BMapGLContextMenuItem,
+  BMapGLLocalSearch, BMapGLTransit, BMapGLWalking, BMapGLDriving, BMapGLBus,
+  BMapGLTile, BMapGLTraffic,
+  BMapGLBoundary, BMapGLAutoComplete
 }
 
 export {
-  BmlMarkerClusterer,
-  BmlLushu,
-  BmlHeatmap,
-  BmlCurveLine
+  BMapGLlMarkerClusterer,
+  BMapGLlLushu,
+  BMapGLlHeatmap,
+  BMapGLlCurveLine
 }

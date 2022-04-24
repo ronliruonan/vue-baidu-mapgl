@@ -45,7 +45,7 @@ export interface InstallationOptions {
 }
 
 /**
- * Install all vue-baidu-map components into Vue.
+ * Install all vue-bmap-gl components into Vue.
  * Please do not invoke this method directly.
  * Call `Vue.use(BaiduMap)` to install.
  */

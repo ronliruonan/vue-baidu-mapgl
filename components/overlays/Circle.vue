@@ -4,7 +4,7 @@ import bindEvents from '../base/bindEvent.js'
 import {createPoint} from '../base/factory.js'
 
 export default {
-  name: 'bm-circle',
+  name: 'bmap-gl-circle',
   render () {},
   mixins: [commonMixin('overlay')],
   props: {
@@ -45,23 +45,23 @@ export default {
   },
   watch: {
     'center.lng' (val, oldVal) {
-      const {BMap, originInstance, isEditing, disableEditing, enableEditing, center, editing} = this
+      const {BMapGL, originInstance, isEditing, disableEditing, enableEditing, center, editing} = this
       if (!isEditing) {
         disableEditing()
         const lng = val
         if (val.toString() !== oldVal.toString() && lng >= -180 && lng <= 180) {
-          originInstance.setCenter(createPoint(BMap, {lng, lat: center.lat}))
+          originInstance.setCenter(createPoint(BMapGL, {lng, lat: center.lat}))
         }
         editing && enableEditing()
       }
     },
     'center.lat' (val, oldVal) {
-      const {BMap, originInstance, isEditing, disableEditing, enableEditing, center, editing} = this
+      const {BMapGL, originInstance, isEditing, disableEditing, enableEditing, center, editing} = this
       if (!isEditing) {
         disableEditing()
         const lat = val
         if (val.toString() !== oldVal.toString() && lat >= -74 && lat <= 74) {
-          originInstance.setCenter(createPoint(BMap, {lng: center.lng, lat}))
+          originInstance.setCenter(createPoint(BMapGL, {lng: center.lng, lat}))
         }
         editing && enableEditing()
       }
@@ -144,8 +144,8 @@ export default {
       }, 0)
     },
     load () {
-      const {BMap, map, center, radius, strokeColor, strokeWeight, strokeOpacity, strokeStyle, fillColor, fillOpacity, editing, massClear, clicking, enableEditing, disableEditing, getEditingKey, editingKey} = this
-      const overlay = new BMap.Circle(createPoint(BMap, {lng: center.lng, lat: center.lat}), radius, {
+      const {BMapGL, map, center, radius, strokeColor, strokeWeight, strokeOpacity, strokeStyle, fillColor, fillOpacity, editing, massClear, clicking, enableEditing, disableEditing, getEditingKey, editingKey} = this
+      const overlay = new BMapGL.Circle(createPoint(BMapGL, {lng: center.lng, lat: center.lat}), radius, {
         strokeColor,
         strokeWeight,
         strokeOpacity,

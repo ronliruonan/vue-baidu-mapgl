@@ -3,7 +3,7 @@ import commonMixin from '../base/mixins/common.js'
 import {createSize} from '../base/factory.js'
 
 export default {
-  name: 'bm-scale',
+  name: 'bmap-gl-scale',
   render () {},
   mixins: [commonMixin('control')],
   props: {
@@ -24,10 +24,10 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, anchor, offset} = this
-      this.originInstance = new BMap.ScaleControl({
+      const {BMapGL, map, anchor, offset} = this
+      this.originInstance = new BMapGL.ScaleControl({
         anchor: global[anchor],
-        offset: offset && createSize(BMap, offset)
+        offset: offset && createSize(BMapGL, offset)
       })
       map.addControl(this.originInstance)
     }

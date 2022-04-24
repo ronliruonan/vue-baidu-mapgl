@@ -4,7 +4,7 @@ import bindEvents from '../base/bindEvent.js'
 import {createBounds} from '../base/factory.js'
 
 export default {
-  name: 'bm-ground',
+  name: 'bmap-gl-ground',
   render () {},
   mixins: [commonMixin('overlay')],
   props: {
@@ -27,8 +27,8 @@ export default {
   watch: {
     bounds: {
       handler (val) {
-        const {BMap} = this
-        this.originInstance.setBounds(createBounds(BMap, val))
+        const {BMapGL} = this
+        this.originInstance.setBounds(createBounds(BMapGL, val))
       },
       deep: true
     },
@@ -47,8 +47,8 @@ export default {
   },
   methods: {
     load () {
-      const {BMap, map, bounds, opacity, imageURL, displayOnMinLevel, displayOnMaxLevel} = this
-      const overlay = new BMap.GroundOverlay(bounds && createBounds(BMap, bounds), {
+      const {BMapGL, map, bounds, opacity, imageURL, displayOnMinLevel, displayOnMaxLevel} = this
+      const overlay = new BMapGL.GroundOverlay(bounds && createBounds(BMapGL, bounds), {
         opacity,
         imageURL,
         displayOnMaxLevel,

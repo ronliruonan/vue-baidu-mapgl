@@ -10,7 +10,7 @@ import bindEvents from '../base/bindEvent.js'
 import {createPoint, createSize} from '../base/factory.js'
 
 export default {
-  name: 'bm-info-window',
+  name: 'bmap-gl-info-window',
   mixins: [commonMixin('overlay')],
   props: {
     show: {
@@ -91,14 +91,14 @@ export default {
       this.originInstance.redraw()
     },
     load () {
-      const {BMap, map, show, title, width, height, maxWidth, offset, autoPan, closeOnClick, message, maximize, bindObserver, $parent} = this
+      const {BMapGL, map, show, title, width, height, maxWidth, offset, autoPan, closeOnClick, message, maximize, bindObserver, $parent} = this
       const $content = this.$el
-      const overlay = new BMap.InfoWindow($content, {
+      const overlay = new BMapGL.InfoWindow($content, {
         width,
         height,
         title,
         maxWidth,
-        offset: createSize(BMap, offset),
+        offset: createSize(BMapGL, offset),
         enableAutoPan: autoPan,
         enableCloseOnClick: closeOnClick,
         enableMessage: typeof message === 'undefined',
@@ -126,8 +126,8 @@ export default {
       this.observer.observe($el, {attributes: true, childList: true, characterData: true, subtree: true})
     },
     openInfoWindow () {
-      const {BMap, $container, position, originInstance} = this
-      $container.openInfoWindow(originInstance, createPoint(BMap, position))
+      const {BMapGL, $container, position, originInstance} = this
+      $container.openInfoWindow(originInstance, createPoint(BMapGL, position))
     },
     closeInfoWindow () {
       this.$container.closeInfoWindow(this.originInstance)

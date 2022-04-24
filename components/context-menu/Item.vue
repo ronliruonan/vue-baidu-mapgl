@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  name: 'bm-context-menu-item',
+  name: 'bmap-gl-context-menu-item',
   props: {
     callback: {
       type: Function,
