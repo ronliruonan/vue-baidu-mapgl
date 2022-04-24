@@ -11,17 +11,17 @@ Due to the features of MVVM, painting in the map no longer needs to be implement
 #### Code
 
 ```html
-<baidu-map class="map"
+<bmap-gl class="map"
   :center="{lng: 116.404, lat: 39.915}"
   :zoom="14"
   @mousemove="syncPolyline"
   @click="paintPolyline"
   @rightclick="newPolyline">
-  <bm-control>
+  <bmap-gl-control>
     <button @click="toggle('polyline')">{{ polyline.editing ? 'STOP' : 'START' }}</button>
-  </bm-control>
-  <bm-polyline :path="path" v-for="path of polyline.paths"></bm-polyline>
-</baidu-map>
+  </bmap-gl-control>
+  <bmap-gl-polyline :path="path" v-for="path of polyline.paths"></bmap-gl-polyline>
+</bmap-gl>
 
 <script>
 export default {
@@ -83,17 +83,17 @@ export default {
 
 #### Preview
 
-<baidu-map class="map"
+<bmap-gl class="map"
   :center="{lng: 116.404, lat: 39.915}"
   :zoom="14"
   @mousemove="syncPolyline"
   @click="paintPolyline"
   @rightclick="newPolyline">
-  <bm-control>
+  <bmap-gl-control>
     <md-button class="md-raised md-primary" @click="toggle('polyline')">{{ polyline.editing ? 'STOP' : 'START' }}</md-button>
-  </bm-control>
-  <bm-polyline :path="path" v-for="path of polyline.paths"></bm-polyline>
-</baidu-map>
+  </bmap-gl-control>
+  <bmap-gl-polyline :path="path" v-for="path of polyline.paths"></bmap-gl-polyline>
+</bmap-gl>
 
 <script>
 export default {

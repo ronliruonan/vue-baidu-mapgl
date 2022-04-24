@@ -19,13 +19,13 @@
 #### 代码
 
 ```html
-<baidu-map class="map" :center="{lng: 116.404, lat: 39.915}" :zoom="14">
+<bmap-gl class="map" :center="{lng: 116.404, lat: 39.915}" :zoom="14">
   <bml-heatmap :data="data" :max="100" :radius="20">
   </bml-heatmap>
-</baidu-map>
+</bmap-gl>
 
 <script>
-import {BmlHeatmap} from 'vue-baidu-map'
+import {BmlHeatmap} from 'vue-baidu-map-plus'
 
 export default {
   components: {
@@ -47,10 +47,10 @@ export default {
 
 #### 预览
 
-<baidu-map class="map" :center="{lng: 116.404, lat: 39.915}" :zoom="14">
+<bmap-gl class="map" :center="{lng: 116.404, lat: 39.915}" :zoom="14">
   <bml-heatmap :data="data" :max="100" :radius="20">
   </bml-heatmap>
-</baidu-map>
+</bmap-gl>
 
 <script>
 import BmlHeatmap from '../../../components/extra/Heatmap.vue'

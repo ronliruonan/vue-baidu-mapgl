@@ -20,15 +20,15 @@
 
 ```html
 <template>
-<baidu-map class="map" center="中国">
+<bmap-gl class="map" center="中国">
   <bml-marker-clusterer :averageCenter="true">
-    <bm-marker v-for="marker of markers" :position="{lng: marker.lng, lat: marker.lat}"></bm-marker>
+    <bmap-gl-marker v-for="marker of markers" :position="{lng: marker.lng, lat: marker.lat}"></bmap-gl-marker>
   </bml-marker-clusterer>
-</baidu-map>
+</bmap-gl>
 </template>
 
 <script>
-import {BmlMarkerClusterer} from 'vue-baidu-map'
+import {BmlMarkerClusterer} from 'vue-baidu-map-plus'
 export default {
   data () {
     // Add ten random points
@@ -52,11 +52,11 @@ export default {
 #### Preview
 
 <doc-preview>
-<baidu-map class="map" center="中国" :scroll-wheel-zoom="true" :double-click-zoom="true">
+<bmap-gl class="map" center="中国" :scroll-wheel-zoom="true" :double-click-zoom="true">
   <bml-marker-clusterer :averageCenter="true" :styles="styles">
-    <bm-marker v-for="marker of markers" :position="marker" @dragend="updateMarker($event, marker)" :dragging="true"></bm-marker>
+    <bmap-gl-marker v-for="marker of markers" :position="marker" @dragend="updateMarker($event, marker)" :dragging="true"></bmap-gl-marker>
   <bml-marker-clusterer>
-</baidu-map>
+</bmap-gl>
 <md-button class="md-raised md-primary" @click="addMarker">Add Marker</md-button>
 <md-button class="md-raised md-primary" @click="removeMarker">Remove Marker</md-button>
 <md-button class="md-raised md-primary" @click="changeStyles">Change Styles</md-button>

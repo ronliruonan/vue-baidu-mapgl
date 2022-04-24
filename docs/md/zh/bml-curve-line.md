@@ -38,13 +38,13 @@
 
 ```html
 <template>
-<baidu-map class="map" :center="{lng: 118.454, lat: 32.955}" :zoom="5">
+<bmap-gl class="map" :center="{lng: 118.454, lat: 32.955}" :zoom="5">
   <bml-curve-line :points="points" :editing="true" @lineupdate="update"></bml-curve-line>
-</baidu-map>
+</bmap-gl>
 </template>
 
 <script>
-import {BmlCurveLine} from 'vue-baidu-map'
+import {BmlCurveLine} from 'vue-baidu-map-plus'
 export default {
   components: {
     BmlCurveLine
@@ -70,9 +70,9 @@ export default {
 #### 预览
 
 <doc-preview>
-  <baidu-map class="map" :center="{lng: 118.454, lat: 32.955}" :zoom="5" :scroll-wheel-zoom="true">
+  <bmap-gl class="map" :center="{lng: 118.454, lat: 32.955}" :zoom="5" :scroll-wheel-zoom="true">
     <bml-curve-line :points="points" :editing="true" @lineupdate="update"></bml-curve-line>
-  </baidu-map>
+  </bmap-gl>
   <md-table>
     <md-table-header>
       <md-table-head>坐标</md-table-head>

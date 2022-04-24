@@ -20,15 +20,15 @@
 
 ```html
 <template>
-<baidu-map class="map" center="中国">
+<bmap-gl class="map" center="中国">
   <bml-marker-clusterer :averageCenter="true">
-    <bm-marker v-for="marker of markers" :position="{lng: marker.lng, lat: marker.lat}"></bm-marker>
+    <bmap-gl-marker v-for="marker of markers" :position="{lng: marker.lng, lat: marker.lat}"></bmap-gl-marker>
   </bml-marker-clusterer>
-</baidu-map>
+</bmap-gl>
 </template>
 
 <script>
-import {BmlMarkerClusterer} from 'vue-baidu-map'
+import {BmlMarkerClusterer} from 'vue-baidu-map-plus'
 export default {
   data () {
     // 插入 10 个随机点
@@ -52,11 +52,11 @@ export default {
 #### 示例
 
 <doc-preview>
-<baidu-map class="map" center="中国" :scroll-wheel-zoom="true" :double-click-zoom="true">
+<bmap-gl class="map" center="中国" :scroll-wheel-zoom="true" :double-click-zoom="true">
   <bml-marker-clusterer :averageCenter="true" :styles="styles">
-    <bm-marker v-for="marker of markers" :position="{lng: marker.lng, lat: marker.lat}" @dragend="updateMarker($event, marker)" :dragging="true"></bm-marker>
+    <bmap-gl-marker v-for="marker of markers" :position="{lng: marker.lng, lat: marker.lat}" @dragend="updateMarker($event, marker)" :dragging="true"></bmap-gl-marker>
   <bml-marker-clusterer>
-</baidu-map>
+</bmap-gl>
 <md-button class="md-raised md-primary" @click="addMarker">添加一个随机点</md-button>
 <md-button class="md-raised md-primary" @click="removeMarker">删除上一个点</md-button>
 <md-button class="md-raised md-primary" @click="changeStyles">更换皮肤</md-button>

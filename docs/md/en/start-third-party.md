@@ -1,6 +1,6 @@
 # Third-Party Components
 
-The third-party component is an encapsulation of an open source library developed based on the Baidu Map JS API. These components not global registration by vue-baidu-map lib. Please register by yourself if needed.
+The third-party component is an encapsulation of an open source library developed based on the Baidu Map JS API. These components not global registration by vue-bmap-gl lib. Please register by yourself if needed.
 
 ## Examples
 
@@ -8,7 +8,7 @@ The third-party component is an encapsulation of an open source library develope
 
 ```javascript
 import Vue from 'vue'
-import {BmlMarkerClusterer} from 'vue-baidu-map'
+import {BmlMarkerClusterer} from 'vue-baidu-map-plus'
 
 Vue.component('bml-marker-cluster', BmlMarkerClusterer)
 ```
@@ -16,7 +16,7 @@ Vue.component('bml-marker-cluster', BmlMarkerClusterer)
 ### Local Registration
 
 ```javascript
-import {BmlMarkerClusterer} from 'vue-baidu-map'
+import {BmlMarkerClusterer} from 'vue-baidu-map-plus'
 export default {
   components: {
     BmlMarkerClusterer

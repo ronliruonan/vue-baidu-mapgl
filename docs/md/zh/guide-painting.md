@@ -11,17 +11,17 @@
 #### 代码
 
 ```html
-<baidu-map class="map"
+<bmap-gl class="map"
   :center="{lng: 116.404, lat: 39.915}"
   :zoom="14"
   @mousemove="syncPolyline"
   @click="paintPolyline"
   @rightclick="newPolyline">
-  <bm-control>
+  <bmap-gl-control>
     <button @click="toggle('polyline')">{{ polyline.editing ? '停止绘制' : '开始绘制' }}</button>
-  </bm-control>
-  <bm-polyline :path="path" v-for="path of polyline.paths"></bm-polyline>
-</baidu-map>
+  </bmap-gl-control>
+  <bmap-gl-polyline :path="path" v-for="path of polyline.paths"></bmap-gl-polyline>
+</bmap-gl>
 
 <script>
 export default {
@@ -83,17 +83,17 @@ export default {
 
 #### 预览
 
-<baidu-map class="map"
+<bmap-gl class="map"
   :center="{lng: 116.404, lat: 39.915}"
   :zoom="14"
   @mousemove="syncPolyline"
   @click="paintPolyline"
   @rightclick="newPolyline">
-  <bm-control>
+  <bmap-gl-control>
     <md-button class="md-raised md-primary" @click="toggle('polyline')">{{ polyline.editing ? '停止绘制' : '开始绘制' }}</md-button>
-  </bm-control>
-  <bm-polyline :path="path" v-for="path of polyline.paths"></bm-polyline>
-</baidu-map>
+  </bmap-gl-control>
+  <bmap-gl-polyline :path="path" v-for="path of polyline.paths"></bmap-gl-polyline>
+</bmap-gl>
 
 <script>
 export default {

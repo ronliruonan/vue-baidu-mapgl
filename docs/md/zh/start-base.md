@@ -4,7 +4,7 @@
 
 |事件名|参数|描述|
 |-----|---|---|
-|ready |{BMap, map}|地图组件渲染完毕时触发，返回一个百度地图的核心类和地图实例。百度地图组件是异步加载，请**不要**尝试在组件的生命周期中访问 BMap 核心类和 map 实例，如有需要，请在所需组件的 `ready` 事件回调函数的参数中获取。|
+|ready |{BMapGL, map}|地图组件渲染完毕时触发，返回一个百度地图的核心类和地图实例。百度地图组件是异步加载，请**不要**尝试在组件的生命周期中访问 BMapGL 核心类和 map 实例，如有需要，请在所需组件的 `ready` 事件回调函数的参数中获取。|
 
 ## 全局组件实例方法
 
@@ -27,9 +27,9 @@
 |BMAP_ANCHOR_BOTTOM_LEFT|控件将定位到地图的左下角|
 |BMAP_ANCHOR_BOTTOM_RIGHT|控件将定位到地图的右下角|
 
-### NavigationControlType
+### ~~NavigationControlType  GL版本无~~
 
-此常量表示平移缩放控件的类型。
+~~此常量表示平移缩放控件的类型。~~
 
 |常量|描述|
 |----|----|
@@ -233,4 +233,4 @@
 
 ## 参考
 
-> [百度地图官方文档](http://lbsyun.baidu.com/cms/jsapi/reference/jsapi_reference.html)
+> [百度地图官方文档](https://lbsyun.baidu.com/index.php?title=jspopularGL)

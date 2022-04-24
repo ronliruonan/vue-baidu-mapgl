@@ -4,11 +4,11 @@
 
 ### Global Registration
 
-Regist all components of *vue-baidu-map* at once.
+Regist all components of *vue-bmap-gl* at once.
 
 ```javascript
 import Vue from 'vue'
-import BaiduMap from 'vue-baidu-map'
+import BaiduMap from 'vue-baidu-map-plus'
 
 Vue.use(BaiduMap, {
   /* Visit http://lbsyun.baidu.com/apiconsole/key for details about app key. */
@@ -18,12 +18,12 @@ Vue.use(BaiduMap, {
 
 ```html
 <template>
-  <baidu-map class="bm-view">
-  </baidu-map>
+  <bmap-gl class="bmap-gl-view">
+  </bmap-gl>
 </template>
 
 <style>
-.bm-view {
+.bmap-gl-view {
   width: 100%;
   height: 300px;
 }
@@ -33,17 +33,17 @@ Vue.use(BaiduMap, {
 ### Local Registration
 
 A locally registered `BaiduMap` component **must** declare the `ak` attribute.
-All components are stored in the `vue-baidu-map / components` folder.
+All components are stored in the `vue-bmap-gl / components` folder.
 As ES module can't be run directly in most browsers, if importing component causes some runtime errors, please check the webpack's loader configuration whethor the `include` and `exclude` options hits this library.
 
 ```html
 <template>
-  <baidu-map class="bm-view" ak="YOUR_APP_KEY">
-  </baidu-map>
+  <bmap-gl class="bmap-gl-view" ak="YOUR_APP_KEY">
+  </bmap-gl>
 </template>
 
 <script>
-import BaiduMap from 'vue-baidu-map/components/map/Map.vue'
+import BaiduMap from 'vue-bmap-gl/components/map/Map.vue'
 export default {
   components: {
     BaiduMap
@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style>
-.bm-view {
+.bmap-gl-view {
   width: 100%;
   height: 300px;
 }
@@ -79,7 +79,7 @@ Vue.use(VueBaiduMap.default, {
 
 ```html
 <template>
-  <baidu-map :center="center" :zoom="zoom"></baidu-map>
+  <bmap-gl :center="center" :zoom="zoom"></bmap-gl>
 </template>
 <script>
 export default {
@@ -102,7 +102,7 @@ export default {
 
 ```html
 <template>
-  <baidu-map :center="center" :zoom="zoom" @ready="handler"></baidu-map>
+  <bmap-gl :center="center" :zoom="zoom" @ready="handler"></bmap-gl>
 </template>
 <script>
 export default {
@@ -113,8 +113,8 @@ export default {
     }
   },
   methods: {
-    handler ({BMap, map}) {
-      console.log(BMap, map)
+    handler ({BMapGL, map}) {
+      console.log(BMapGL, map)
       this.center.lng = 116.404
       this.center.lat = 39.915
       this.zoom = 15
@@ -128,7 +128,7 @@ export default {
 
 ```html
 <template>
-  <baidu-map class="map" center="北京"></baidu-map>
+  <bmap-gl class="map" center="北京"></bmap-gl>
 </template>
 <style>
 .map {
@@ -138,6 +138,6 @@ export default {
 </style>
 ```
 <doc-preview>
-  <baidu-map class="map" center="北京">
-  </baidu-map>
+  <bmap-gl class="map" center="北京">
+  </bmap-gl>
 </doc-preview>

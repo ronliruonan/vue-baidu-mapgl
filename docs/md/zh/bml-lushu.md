@@ -32,8 +32,8 @@
 
 ```html
 <template>
-<baidu-map class="map" :center="{lng: 116.404, lat: 39.915}" :zoom="11">
-  <bm-driving start="天安门" end="百度大厦" @searchcomplete="handleSearchComplete" :panel="false" :autoViewport="true"></bm-driving>
+<bmap-gl class="map" :center="{lng: 116.404, lat: 39.915}" :zoom="11">
+  <bmap-gl-driving start="天安门" end="百度大厦" @searchcomplete="handleSearchComplete" :panel="false" :autoViewport="true"></bmap-gl-driving>
   <bml-lushu
     @stop="reset"
     :path="path"
@@ -41,11 +41,11 @@
     :play="play"
     :rotation="true">
   </bml-lushu>
-</baidu-map>
+</bmap-gl>
 </template>
 
 <script>
-import {BmlLushu} from 'vue-baidu-map'
+import {BmlLushu} from 'vue-baidu-map-plus'
 export default {
   components: {
     BmlLushu
@@ -76,8 +76,8 @@ export default {
 #### 预览
 
 <doc-preview>
-  <baidu-map class="map" :center="{lng: 116.404, lat: 39.915}" :zoom="11">
-    <bm-driving start="天安门" end="百度大厦" @searchcomplete="handleSearchComplete" :panel="false" :autoViewport="true"></bm-driving>
+  <bmap-gl class="map" :center="{lng: 116.404, lat: 39.915}" :zoom="11">
+    <bmap-gl-driving start="天安门" end="百度大厦" @searchcomplete="handleSearchComplete" :panel="false" :autoViewport="true"></bmap-gl-driving>
     <bml-lushu
       @start="changeBtnText('pause')"
       @stop="changeBtnText('play_arrow')"
@@ -90,7 +90,7 @@ export default {
       :icon="icon"
       :play="play">
     </bml-lushu>
-  </baidu-map>
+  </bmap-gl>
   <md-table>
     <md-table-header>
       <md-table-head>操作</md-table-head>
