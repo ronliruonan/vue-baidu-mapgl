@@ -1,7 +1,7 @@
 <template>
-<div>
-  <slot></slot>
-</div>
+  <div>
+    <slot></slot>
+  </div>
 </template>
 
 <script>
@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     load () {
-      const {BMapGL, map, $el, pane} = this
+      const { BMapGL, map, $el, pane } = this
       const $emit = this.$emit.bind(this)
       class CustomOverlay extends BMapGL.Overlay {
         initialize () {
@@ -34,7 +34,7 @@ export default {
           })
           try {
             map.getPanes()[pane].appendChild($el)
-          } catch (e) {}
+          } catch (e) { }
           return $el
         }
         draw () {

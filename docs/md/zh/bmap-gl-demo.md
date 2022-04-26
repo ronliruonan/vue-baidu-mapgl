@@ -2,14 +2,25 @@
 
 <doc-preview>
   <bmap-gl style="height:75vh;" class="map" :zoom="zoom" scrollWheelZoom :center="{lng: 116.432809, lat: 39.96858}" @ready="readyHandler">
+    <!-- 自定义控件 -->
     <bmap-gl-control v-show="isReady">
-      <!-- <md-button class="md-raised" @click="addZoom(21)">缩放至最大</md-button> -->
+      <md-button class="md-raised" @click="addZoom(21)">缩放至最大</md-button>
       <!-- <md-button class="md-raised" @click="addZoom(3)">缩放至最小</md-button> -->
       <md-button class="md-raised" @click="clickWeixing">卫星图</md-button>
     </bmap-gl-control>
     <!-- 要使用双tag进行闭合，不然会中奖 -->
+    <!-- 缩放控件 -->
     <bmap-gl-zoom anchor="BMAP_ANCHOR_TOP_RIGHT"></bmap-gl-zoom>
+    <!-- 比例尺控件 -->
     <bmap-gl-scale></bmap-gl-scale>
+    <bmap-gl-overlay
+        ref="customOverlay1"
+        v-for="(item, index) in buildingList" :key="item.position"
+        pane="labelPane"
+        @draw="draw(item, $event)"
+    >
+      <div>{{ item.buildingName }}</div>
+    </bmap-gl-overlay>
   </bmap-gl>
 </doc-preview>
 
@@ -196,6 +207,18 @@ export default {
         const pos = item.position.split(',')
         map.addOverlay(new BMapGL.Marker(new BMapGL.Point(pos[0], pos[1]), { icon }))
       })
+    },
+    draw(item, { el, BMapGL, map }) {
+        if (!item.position) return void 0;
+        if (!item.position.length) return void 0;
+
+        console.log(11)
+
+        const center = item.position.split(',');
+        const pixel = map.pointToOverlayPixel(new BMapGL.Point(center[0], center[1]));
+        el.style.left = pixel.x - 28 + 'px';
+        const top = 40;
+        el.style.top = pixel.y - top + 'px';
     },
     addZoom (level) {
       this.zoom = level
