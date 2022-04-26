@@ -19,6 +19,18 @@ const genRouteMap = (routeMap, lang, isChild) => routeMap.reduce((res, item) => 
 const routeMap = [
   {
     // 首页
+    path: '',
+    name: {
+      'zh': '文档',
+      'en': 'Documentation'
+    },
+    component: 'index',
+    meta: {
+      hidden: true
+    }
+  },
+  {
+    // 首页
     path: 'index',
     name: {
       'zh': '文档',
@@ -28,6 +40,15 @@ const routeMap = [
     meta: {
       hidden: true
     }
+  },
+  {
+    // demo
+    path: 'demo',
+    name: {
+      'zh': '文档',
+      'en': 'Documentation'
+    },
+    component: 'bmap-gl-demo'
   },
   {
     // 开始
