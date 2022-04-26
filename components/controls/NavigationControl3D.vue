@@ -3,7 +3,7 @@ import commonMixin from '../base/mixins/common.js'
 import { createSize } from '../base/factory.js'
 
 export default {
-  name: 'bmap-gl-scale',
+  name: 'bmap-gl-navigation3d',
   render () { },
   mixins: [commonMixin('control')],
   props: {
@@ -12,6 +12,16 @@ export default {
     },
     offset: {
       type: Object
+    },
+    type: {
+      type: String
+    },
+    showZoomInfo: {
+      type: Boolean
+    },
+    enableGeolocation: {
+      type: Boolean,
+      default: false
     }
   },
   watch: {
@@ -20,12 +30,18 @@ export default {
     },
     offset () {
       this.reload()
+    },
+    type () {
+      this.reload()
+    },
+    showZoomInfo () {
+      this.reload()
     }
   },
   methods: {
     load () {
       const { BMapGL, map, anchor, offset } = this
-      this.originInstance = new BMapGL.ScaleControl({ // 添加比例尺
+      this.originInstance = new BMapGL.NavigationControl3D({
         anchor: global[anchor],
         offset: offset && createSize(BMapGL, offset)
       })

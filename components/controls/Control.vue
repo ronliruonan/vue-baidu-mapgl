@@ -1,12 +1,12 @@
 <template>
-<div>
-  <slot></slot>
-</div>
+  <div>
+    <slot></slot>
+  </div>
 </template>
 
 <script>
 import commonMixin from '../base/mixins/common.js'
-import {createSize} from '../base/factory.js'
+import { createSize } from '../base/factory.js'
 
 export default {
   name: 'bmap-gl-control',
@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     load () {
-      const {BMapGL, map, anchor, offset, $el} = this
+      const { BMapGL, map, anchor, offset, $el } = this
       const Control = function () {
         this.defaultAnchor = global[anchor || 'BMAP_ANCHOR_TOP_LEFT']
         this.defaultOffset = createSize(BMapGL, offset)

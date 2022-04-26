@@ -1,5 +1,6 @@
 import BMapGL from './map/Map.vue'
 import BMapGLView from './map/MapView.vue'
+/** 比例尺控件 */
 import BMapGLScale from './controls/Scale.vue'
 import BMapGLNavigation from './controls/Navigation.vue'
 import BMapGLMapType from './controls/MapType.vue'
@@ -35,18 +36,25 @@ import BMapGLlLushu from './extra/Lushu.vue'
 import BMapGLlHeatmap from './extra/Heatmap.vue'
 import BMapGLlCurveLine from './extra/CurveLine.vue'
 
-import BMapGLZoom from './controls/ZoomControl.vue'
+// new for baidu map gl
+
+/** 缩放控件 */
+import BMapGLZoom from './controls/Zoom.vue'
+/** 3D控件 */
+import BMapGLNavigationControl3D from './controls/NavigationControl3D.vue'
 
 export default {
   install (Vue, options) {
-    const {ak} = options
-    Vue.prototype._BMapGL = () => ({ak})
+    const { ak } = options
+    Vue.prototype._BMapGL = () => ({ ak })
 
     Vue.component('bmap-gl', BMapGL)
     Vue.component('bmap-gl-zoom', BMapGLZoom)
+    Vue.component('bmap-gl-scale', BMapGLScale)
+    Vue.component('bmap-gl-navigation3d', BMapGLNavigationControl3D)
+
     Vue.component('bmap-gl-view', BMapGLView)
 
-    Vue.component('bmap-gl-scale', BMapGLScale)
     Vue.component('bmap-gl-navigation', BMapGLNavigation)
     Vue.component('bmap-gl-map-type', BMapGLMapType)
     Vue.component('bmap-gl-overview-map', BMapGLOverviewMap)
@@ -85,7 +93,8 @@ export default {
 
 export {
   BMapGL, BMapGLView,
-  BMapGLScale, BMapGLNavigation, BMapGLMapType, BMapGLOverviewMap, BMapGLGeolocation, BMapGLCopyright, BMapGLCityList, BMapGLPanorama, BMapGLControl,
+  BMapGLZoom, BMapGLScale, BMapGLNavigationControl3D,
+  BMapGLNavigation, BMapGLMapType, BMapGLOverviewMap, BMapGLGeolocation, BMapGLCopyright, BMapGLCityList, BMapGLPanorama, BMapGLControl,
   BMapGLMarker, BMapGLPointCollection, BMapGLPolyline, BMapGLPolygon, BMapGLCircle, BMapGLGround, BMapGLLabel, BMapGLInfoWindow, BMapGLOverlay,
   BMapGLContextMenu, BMapGLContextMenuItem,
   BMapGLLocalSearch, BMapGLTransit, BMapGLWalking, BMapGLDriving, BMapGLBus,

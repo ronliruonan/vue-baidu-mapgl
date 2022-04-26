@@ -3,7 +3,7 @@ import commonMixin from '../base/mixins/common.js'
 import { createSize } from '../base/factory.js'
 
 export default {
-  name: 'bmp-gl-zoom',
+  name: 'bmap-gl-zoom',
   render () { },
   mixins: [commonMixin('control')],
   props: {
