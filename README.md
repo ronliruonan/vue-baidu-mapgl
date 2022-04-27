@@ -1,23 +1,21 @@
 # VUE BAIDU MAP PLUS
-因项目迭代，考虑成本问题，直接直接fork原作者，升级为百度地图 GL版本，待完善ing.
+因项目迭代，考虑成本问题，直接直接fork原作者，升级为百度地图 GL版本，待完善ing.          
+
+感谢原作者原作者：     
 
 
-
-
-
-感谢原作者原作者：
-# VUE BAIDU MAP
+## VUE BAIDU MAP (原版)
 
 <p align="center">
   <img src="https://dafrok.github.io/vue-baidu-map/favicon.png" width="200px">
 </p>
 <p align="center">Baidu Map components for Vue 2.x</p>
 
-[![npm](https://img.shields.io/npm/v/vue-baidu-map.svg)]()
+[![npm](https://img.shields.io/npm/v/vue-baidu-map-plus.svg)]()
 [![Travis](https://img.shields.io/travis/Dafrok/vue-baidu-map.svg)]()
-[![Package Quality](http://npm.packagequality.com/shield/vue-baidu-map.svg)](http://packagequality.com/#?package=vue-baidu-map)
-[![npm](https://img.shields.io/npm/dm/vue-baidu-map.svg)]()
-[![license](https://img.shields.io/github/license/dafrok/vue-baidu-map.svg)]()
+[![Package Quality](http://npm.packagequality.com/shield/vue-baidu-map-plus.svg)](http://packagequality.com/#?package=vue-baidu-map-plus)
+[![npm](https://img.shields.io/npm/dm/vue-baidu-map-plus.svg)]()
+[![license](https://img.shields.io/github/license/ronliruonan/vue-baidu-mapgl.svg)]()
 
 ## Languages
 
