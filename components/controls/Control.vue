@@ -23,8 +23,9 @@ export default {
   methods: {
     load () {
       const { BMapGL, map, anchor, offset, $el } = this
+      console.warn('control', anchor)
       const Control = function () {
-        this.defaultAnchor = global[anchor || 'BMAP_ANCHOR_TOP_LEFT']
+        this.defaultAnchor = global[anchor || 'BMAP_ANCHOR_TOP_RIGHT']
         this.defaultOffset = createSize(BMapGL, offset)
       }
       Control.prototype = new BMapGL.Control()
