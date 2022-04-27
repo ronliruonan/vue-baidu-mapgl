@@ -14,12 +14,19 @@
     <!-- 比例尺控件 -->
     <bmap-gl-scale></bmap-gl-scale>
     <bmap-gl-overlay
-        ref="customOverlay1"
-        v-for="(item, index) in buildingList" :key="item.position"
-        pane="labelPane"
-        @draw="draw(item, $event)"
+      pane="labelPane"
+      v-for="item in buildingList" :key="item.position"
+      :class="{sample: true, active: true}"
+      @draw="draw(item, $event)"
     >
-      <div>{{ item.buildingName }}</div>
+      <transition name="slide-fade">
+        <div class="card-box">
+          <div class="card-name">
+            {{ item.buildingName }}
+            <div class='triangle-down'></div>
+          </div>
+        </div>
+      </transition>
     </bmap-gl-overlay>
   </bmap-gl>
 </doc-preview>
@@ -28,6 +35,7 @@
 export default {
   data () {
     return {
+      active: false,
       mapInstance: null,
       isReady: false,
       zoom: 18.5,
@@ -202,23 +210,48 @@ export default {
       this.isReady = true
       this.mapInstance = map
 
+      this.drawPoints({ BMapGL, map })
+      this.drawLables({ BMapGL, map })
+
+      console.warn(this.buildingList.length, 'buildingList len')
+    },
+    drawLables ({ BMapGL, map }) {
+      // this.buildingList.forEach(item => {
+      //   const pos = item.position.split(',')
+      //   const label = new BMapGL.Label(item.buildingName, { 
+      //     position: new BMapGL.Point(pos[0],pos[1]),
+      //     offset: new BMapGL.Size(-20, -40)
+      //   })
+      //   map.addOverlay(label)
+      // })
+
+      // const label = new BMapGL.Label('33号楼', { 
+      //   position: new BMapGL.Point(116.43346865102163,39.968585768122004),
+      //   offset: new BMapGL.Size(-20, -40)
+      //  })
+      //  map.addOverlay(label)
+
+      class CustomOverlay extends BMapGL.Overlay {
+
+      }
+    },
+    drawPoints({ BMapGL, map }) {
       const icon = new BMapGL.Icon('https://webmap1.bdimg.com/wolfman/static/common/images/hot-copyright_ac4ab30.png', new BMapGL.Size(14,14))
+
       this.buildingList.forEach(item => {
         const pos = item.position.split(',')
         map.addOverlay(new BMapGL.Marker(new BMapGL.Point(pos[0], pos[1]), { icon }))
       })
     },
     draw(item, { el, BMapGL, map }) {
-        if (!item.position) return void 0;
-        if (!item.position.length) return void 0;
+      if (!item.position) return void 0;
+      if (!item.position.length) return void 0;
 
-        console.log(11)
-
-        const center = item.position.split(',');
-        const pixel = map.pointToOverlayPixel(new BMapGL.Point(center[0], center[1]));
-        el.style.left = pixel.x - 28 + 'px';
-        const top = 40;
-        el.style.top = pixel.y - top + 'px';
+      const center = item.position.split(',');
+      const pixel = map.pointToOverlayPixel(new BMapGL.Point(center[0], center[1]));
+      el.style.left = pixel.x - 28 + 'px';
+      const top = 40;
+      el.style.top = pixel.y - top + 'px';
     },
     addZoom (level) {
       this.zoom = level
@@ -234,3 +267,66 @@ export default {
 }
 </script>
 
+<style>
+.sample {
+  min-width: 42px;
+  /* max-width: 107px; */
+  width: auto;
+  white-space: nowrap;
+  font-size: 8px;
+  color: #fff;
+  /* text-align: center; */
+  padding: 2px 4px;
+  position: absolute;
+  border: 2px solid #999;
+  background: #262626;
+  border-radius: 8px;
+  z-index: 100;
+}
+.sample.active {
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  z-index: 1000;
+  opacity: 1 !important;
+}
+.triangle-down {
+  z-index: 100;
+  position: absolute;
+  bottom: 0px;
+}
+.triangle-down:after{
+  box-sizing: content-box;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  bottom: -20px;;
+  left: 12px;
+  padding:0;
+  border-right: 10px solid transparent;
+  border-top:10px solid #ccc;
+  border-bottom:10px solid transparent;
+  border-left:10px solid transparent;
+  display: block;
+  content:'';
+  z-index: -2;
+}
+.triangle-down:before{
+  box-sizing: content-box;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  bottom: -16px;;
+  left: 14px;
+  padding:0;
+  border-right: 8px solid transparent;
+  border-top:8px solid  #262626;
+  border-bottom: 8px solid transparent;
+  border-left:8px solid transparent;
+  display: block;
+  content: '';
+  z-index: -1;
+}
+.rowCls {
+  margin-top: 20px;
+}
+</style>
