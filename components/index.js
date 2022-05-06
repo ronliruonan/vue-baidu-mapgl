@@ -42,6 +42,7 @@ import BMapGLlCurveLine from './extra/CurveLine.vue'
 import BMapGLZoom from './controls/Zoom.vue'
 /** 3D控件 */
 import BMapGLNavigationControl3D from './controls/NavigationControl3D.vue'
+import BMapGLToolDistance from './tools/distance.vue'
 
 export default {
   install (Vue, options) {
@@ -88,6 +89,8 @@ export default {
 
     Vue.component('bmap-gl-auto-complete', BMapGLAutoComplete)
     Vue.component('bmap-gl-boundary', BMapGLBoundary)
+
+    Vue.component('bmap-gl-distance', BMapGLToolDistance)
   }
 }
 
@@ -99,7 +102,8 @@ export {
   BMapGLContextMenu, BMapGLContextMenuItem,
   BMapGLLocalSearch, BMapGLTransit, BMapGLWalking, BMapGLDriving, BMapGLBus,
   BMapGLTile, BMapGLTraffic,
-  BMapGLBoundary, BMapGLAutoComplete
+  BMapGLBoundary, BMapGLAutoComplete,
+  BMapGLToolDistance
 }
 
 export {
