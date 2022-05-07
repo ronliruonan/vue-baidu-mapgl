@@ -29,6 +29,7 @@
         </div>
       </transition>
     </bmap-gl-overlay>
+    <div class="map-tools">工具箱展示在哪里</div>
   </bmap-gl>
   <h2 @click="opendis">点我开启</h2>
 </doc-preview>
@@ -151,6 +152,15 @@ export default {
 </script>
 
 <style>
+.map {
+  position: relative;
+}
+.map-tools {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  margin-right: 20px;
+}
 .sample {
   min-width: 42px;
   /* max-width: 107px; */

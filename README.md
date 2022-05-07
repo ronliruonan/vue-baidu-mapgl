@@ -1,4 +1,8 @@
 # VUE BAIDU MAP PLUS
+## 选择理由
+如果你的项目中已经在使用 `vue-baidu-map`, 那么当前就是你最佳的选择（因为fork源项目，仅对百度地图升级，100%保留了原有的功能组件）
+
+## Thanks
 因项目迭代，考虑成本问题，直接直接fork原作者，升级为百度地图 GL版本，待完善ing.          
 
 感谢原作者原作者：     
@@ -20,7 +24,7 @@
 ## Languages
 
 - [中文](https://github.com/Dafrok/vue-baidu-map/blob/master/README.zh.md)
-- [English](https://github.com/Dafrok/vue-baidu-map/blob/master/README.md)
+- [English-Not available](https://github.com/Dafrok/vue-baidu-map/blob/master/README.md)
 
 ## Documentation
 
