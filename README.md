@@ -9,7 +9,7 @@
 [![npm](https://img.shields.io/npm/dm/vue-baidu-map-plus.svg)]()
 [![license](https://img.shields.io/github/license/ronliruonan/vue-baidu-mapgl.svg)]()
 
-# Vue Baidu Map plus for GL
+# Baidu Map GL
 ## 选择`vue-baidu-map-plus`的理由
 如果你的项目中已经在使用 `vue-baidu-map`, 那么当前就是你最佳的选择（ 因为fork了源项目，100%保留/兼容了原有的功能组件，仅最小范围升级GL版本 ）      
 
