@@ -1,8 +1,7 @@
-# Vue Baidu Map Plus for GL
 <p align="center">
   <img src="https://raw.githubusercontent.com/ronliruonan/vue-baidu-mapgl/static_site/favicon.png" width="200px">
 </p>
-<p align="center">Baidu Map components for Vue 2.x</p>
+<p align="center">Baidu Map GL components for Vue 2.x</p>
 
 [![npm](https://img.shields.io/npm/v/vue-baidu-map-plus.svg)]()
 [![Travis](https://img.shields.io/travis/ronliruonan/vue-baidu-map-plus.svg)]()
@@ -10,17 +9,19 @@
 [![npm](https://img.shields.io/npm/dm/vue-baidu-map-plus.svg)]()
 [![license](https://img.shields.io/github/license/ronliruonan/vue-baidu-mapgl.svg)]()
 
-## 选择理由
+# Vue Baidu Map plus for GL
+## 选择`vue-baidu-map-plus`的理由
 如果你的项目中已经在使用 `vue-baidu-map`, 那么当前就是你最佳的选择（ 因为fork了源项目，100%保留/兼容了原有的功能组件，仅最小范围升级GL版本 ）      
 
-## 为何重复轮子吗
+## 重复轮子吗
 因为项目中使用了Lite版本百度地图 `vue-baidu-map`，与业务实际对照百度地图官网有多差异，为保持用户体感一致，考虑使用Baidu MapGL版本。    
-考虑成本问题，直接直接fork原作者，升级为百度地图 GL版本，待完善ing.          
+考虑成本问题，直接直接fork原作者，升级为百度地图 GL版本，待完善ing.    
 
-## Thanks
-感谢原作者原作者   
-# There is the `vue-baidu-map`
 
+<br>
+<br>
+
+## Thanks & `vue-baidu-map` 源著
 <p align="center">
   <img src="https://dafrok.github.io/vue-baidu-map/favicon.png" width="200px">
 </p>
