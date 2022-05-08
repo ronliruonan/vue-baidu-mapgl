@@ -1,10 +1,20 @@
-# VUE BAIDU MAP PLUS
-因项目迭代，考虑成本问题，直接直接fork原作者，升级为百度地图 GL版本，待完善ing.          
+# Vue Baidu Map Plus for GL
+<p align="center">
+  <img src="https://dafrok.github.io/vue-baidu-map/favicon.png" width="200px">
+</p>
 
-感谢原作者原作者：     
+## 选择理由
+如果你的项目中已经在使用 `vue-baidu-map`, 那么当前就是你最佳的选择（ 因为fork了源项目，100%保留/兼容了原有的功能组件，仅最小范围升级GL版本 ）      
+
+## Thanks
+感谢原作者原作者   
+
+## 为何重复轮子吗
+因为项目中使用了Lite版本百度地图 `vue-baidu-map`，与业务实际对照百度地图官网有多差异，为保持用户体感一致，考虑使用Baidu MapGL版本。    
+考虑成本问题，直接直接fork原作者，升级为百度地图 GL版本，待完善ing.          
 
 
-## VUE BAIDU MAP (原版)
+# There is the `vue-baidu-map`
 
 <p align="center">
   <img src="https://dafrok.github.io/vue-baidu-map/favicon.png" width="200px">
@@ -20,7 +30,7 @@
 ## Languages
 
 - [中文](https://github.com/Dafrok/vue-baidu-map/blob/master/README.zh.md)
-- [English](https://github.com/Dafrok/vue-baidu-map/blob/master/README.md)
+- [English-Not available](https://github.com/Dafrok/vue-baidu-map/blob/master/README.md)
 
 ## Documentation
 
