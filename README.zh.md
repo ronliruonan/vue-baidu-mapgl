@@ -13,8 +13,8 @@
 
 ## 语言
 
-- [中文](https://github.com/Dafrok/vue-baidu-map/blob/master/README.zh.md)
-- [English](https://github.com/Dafrok/vue-baidu-map/blob/master/README.md)
+- [中文](https://github.com/ronliruonan/vue-baidu-mapgl/blob/master/README.zh.md)
+- [English](https://github.com/ronliruonan/vue-baidu-mapgl/blob/master/README.md)
 
 ## 文档
 
@@ -58,7 +58,7 @@ Vue.use(BaiduMap, {
 
 ## 贡献
 
-[贡献指南](https://github.com/Dafrok/vue-baidu-map/blob/master/CONTRIBUTING.md)
+[贡献指南](https://github.com/ronliruonan/vue-baidu-mapgl/blob/master/CONTRIBUTING.md)
 
 
 ## 协议

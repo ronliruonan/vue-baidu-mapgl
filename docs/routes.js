@@ -174,7 +174,7 @@ const routeMap = [
         path: 'overview-map',
         component: 'bmap-gl-overview-map',
         name: {
-          zh: '缩略图',
+          zh: '缩略图(弃用)',
           en: 'Overview Map'
         }
       },
@@ -182,7 +182,7 @@ const routeMap = [
         path: 'geolocation',
         component: 'bmap-gl-geolocation',
         name: {
-          zh: '定位',
+          zh: '定位(弃用)',
           en: 'Geolocation'
         }
       },

@@ -61,9 +61,9 @@ export class BmView extends MapView {}
 export class BmScale extends Scale {}
 export class BmNavigation extends Navigation {}
 export class BmMapType extends MapType {}
-export class BmOverviewMap extends OverviewMap {}
+export class BmapGLOverviewMap extends OverviewMap {}
 export class BmGeolocation extends Geolocation {}
-export class BmCopyright extends Copyright {}
+export class BmapGLCopyright extends Copyright {}
 export class BmCityList extends CityList {}
 export class BmPanorama extends Panorama {}
 export class BmControl extends Control {}

@@ -37,8 +37,8 @@ https://ronliruonan.github.io/vue-baidu-mapgl/#/zh/index
 
 ## Languages
 
-- [中文](https://github.com/Dafrok/vue-baidu-map/blob/master/README.zh.md)
-- [English-Not available](https://github.com/Dafrok/vue-baidu-map/blob/master/README.md)
+- [中文](https://github.com/ronliruonan/vue-baidu-mapgl/blob/master/README.zh.md)
+- [English-Not available](https://github.com/ronliruonan/vue-baidu-mapgl/blob/master/README.md)
 
 ## Documentation
 
@@ -83,7 +83,7 @@ Vue.use(BaiduMap, {
 
 ## Contributing
 
-[Contributing Guide](https://github.com/Dafrok/vue-baidu-map/blob/master/CONTRIBUTING.md)
+[Contributing Guide](https://github.com/ronliruonan/vue-baidu-mapgl/blob/master/CONTRIBUTING.md)
 
 
 ## License

@@ -8,7 +8,7 @@ div
       md-button.md-icon-button
         router-link.link(:to="`/${otherLang}/index`", @click="changeLang")
         md-icon(md-iconset="iconfont icon-zhongyingwenqiehuan-xianshizhongyingwen")
-      md-button.md-icon-button(href="https://github.com/Dafrok/vue-baidu-map")
+      md-button.md-icon-button(href="https://github.com/ronliruonan/vue-baidu-mapgl")
         md-icon(md-iconset="iconfont icon-github")
   md-sidenav.md-left.md-fixed.main-nav(ref="sidenav")
     md-toolbar(md-theme="white").logo
