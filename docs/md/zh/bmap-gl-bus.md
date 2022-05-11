@@ -33,20 +33,19 @@
 
 ```html
 <template>
-<bmap-gl
+<bmap-gl>
   <bmap-gl-view class="map">
   </bmap-gl-view>
   <bmap-gl-bus keyword="331" :auto-viewport="true" location="北京"></bmap-gl-bus>
-</bmap-gl
+</bmap-gl>
 </template>
 ```
 
 #### 预览
 <doc-preview>
-  <bmap-gl
+  <bmap-gl>
     <bmap-gl-view class="map">
     </bmap-gl-view>
     <bmap-gl-bus keyword="331" :auto-viewport="true" location="北京"></bmap-gl-bus>
-  </bmap-gl
+  </bmap-gl>
 </doc-preview>
-</template>
