@@ -1,6 +1,6 @@
-# 缩略图控件
+# 缩略图控件, GL无 GL无 GL无 GL无 GL无
 
-`BmOverviewMap`
+`BmapGLOverviewMap`
 
 ## 属性
 

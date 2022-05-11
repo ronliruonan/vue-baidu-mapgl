@@ -1,7 +1,7 @@
 # VUE BAIDU MAP PLUS / BMapGL from baidu
 
 <p align="center">
-  <img src="https://dafrok.github.io/vue-baidu-map/favicon.png" width="200px">
+  <img src="https://raw.githubusercontent.com/ronliruonan/vue-baidu-mapgl/static_site/favicon.png" width="200px">
 </p>
 <p align="center">基于 VUE 2.x 的百度地图组件22</p>
 
@@ -13,8 +13,8 @@
 
 ## 语言
 
-- [中文](https://github.com/Dafrok/vue-baidu-map/blob/master/README.zh.md)
-- [English-Not available](https://github.com/Dafrok/vue-baidu-map/blob/master/README.md)
+- [中文](https://github.com/ronliruonan/vue-baidu-mapgl/blob/master/README.zh.md)
+- [English](https://github.com/ronliruonan/vue-baidu-mapgl/blob/master/README.md)
 
 ## 文档
 
@@ -58,7 +58,7 @@ Vue.use(BaiduMap, {
 
 ## 贡献
 
-[贡献指南](https://github.com/Dafrok/vue-baidu-map/blob/master/CONTRIBUTING.md)
+[贡献指南](https://github.com/ronliruonan/vue-baidu-mapgl/blob/master/CONTRIBUTING.md)
 
 
 ## 协议

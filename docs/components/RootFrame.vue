@@ -8,12 +8,12 @@ div
       md-button.md-icon-button
         router-link.link(:to="`/${otherLang}/index`", @click="changeLang")
         md-icon(md-iconset="iconfont icon-zhongyingwenqiehuan-xianshizhongyingwen")
-      md-button.md-icon-button(href="https://github.com/Dafrok/vue-baidu-map")
+      md-button.md-icon-button(href="https://github.com/ronliruonan/vue-baidu-mapgl")
         md-icon(md-iconset="iconfont icon-github")
   md-sidenav.md-left.md-fixed.main-nav(ref="sidenav")
     md-toolbar(md-theme="white").logo
       router-link.link(:to="`/`")
-        img(src="//dafrok.github.io/vue-baidu-map/favicon.png")
+        img(src="//raw.githubusercontent.com/ronliruonan/vue-baidu-mapgl/static_site/favicon.png")
         div Vue Baidu Map Plus
     slot(name="side-nav")
   .page-content

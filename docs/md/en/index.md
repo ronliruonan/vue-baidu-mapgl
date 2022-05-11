@@ -1,6 +1,6 @@
 # VUE BAIDU MAP
 
-<p align="center"><img src="//dafrok.github.io/vue-bmap-gl/favicon.png" width="200px"></p>
+<p align="center"><img src="//raw.githubusercontent.com/ronliruonan/vue-baidu-mapgl/static_site/favicon.png" width="200px"></p>
 
 <p align="center">Baidu Map components for Vue 2.x</p>
 

@@ -32,7 +32,7 @@
 <template>
   <bmap-gl class="map" :center="{lng: 116.404, lat: 39.915}" :zoom="15">
     <bmap-gl-ground
-      :bounds="{ne: {lng: 110, lat: 40}, sw:{lng: 0, lat: 0}}" imageURL="http://dafrok.github.io/vue-bmap-gl/favicon.png">
+      :bounds="{ne: {lng: 110, lat: 40}, sw:{lng: 0, lat: 0}}" imageURL="http://raw.githubusercontent.com/ronliruonan/vue-baidu-mapgl/static_site/favicon.png">
     </bmap-gl-ground>
   </bmap-gl>
 </template>

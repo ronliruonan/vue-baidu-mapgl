@@ -1,6 +1,6 @@
 # Overview Map Control
 
-`BmOverviewMap`
+`BmapGLOverviewMap`
 
 ## Instance Properties
 

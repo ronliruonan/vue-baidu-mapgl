@@ -1,6 +1,6 @@
 # 比例尺控件
 
-`BmScale`
+`BmapGLScale`
 
 ## 属性
 
