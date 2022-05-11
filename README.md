@@ -25,7 +25,7 @@ https://ronliruonan.github.io/vue-baidu-mapgl/#/zh/index
 
 ## Thanks & `vue-baidu-map` 源著
 <p align="center">
-  <img src="https://dafrok.github.io/vue-baidu-map/favicon.png" width="200px">
+  <img src="https://raw.githubusercontent.com/ronliruonan/vue-baidu-mapgl/static_site/favicon.png" width="200px">
 </p>
 <p align="center">Baidu Map components for Vue 2.x</p>
 

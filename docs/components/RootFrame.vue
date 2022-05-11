@@ -13,7 +13,7 @@ div
   md-sidenav.md-left.md-fixed.main-nav(ref="sidenav")
     md-toolbar(md-theme="white").logo
       router-link.link(:to="`/`")
-        img(src="//dafrok.github.io/vue-baidu-map/favicon.png")
+        img(src="//raw.githubusercontent.com/ronliruonan/vue-baidu-mapgl/static_site/favicon.png")
         div Vue Baidu Map Plus
     slot(name="side-nav")
   .page-content

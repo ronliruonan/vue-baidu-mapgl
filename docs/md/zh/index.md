@@ -1,6 +1,6 @@
-# VUE BAIDU MAP PLUS / BMapGL from baidu
+# Vue Baidu Map GL from `vue-baidu-map`
 
-<p align="center"><img src="//dafrok.github.io/vue-baidu-map/favicon.png" width="200px"></p>
+<p align="center"><img src="//raw.githubusercontent.com/ronliruonan/vue-baidu-mapgl/static_site/favicon.png" width="200px"></p>
 
 <p align="center">基于 VUE 2.x 的百度地图组件</p>
 
