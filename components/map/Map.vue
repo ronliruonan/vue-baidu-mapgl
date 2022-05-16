@@ -198,7 +198,7 @@ export default {
   },
   methods: {
     setMapOptions () {
-      const { map, minZoom, maxZoom, mapType, dragging, scrollWheelZoom, doubleClickZoom, keyboard, inertialDragging, continuousZoom, pinchToZoom, autoResize } = this
+      const { map, mapType, dragging, scrollWheelZoom, doubleClickZoom, keyboard, inertialDragging, continuousZoom, pinchToZoom, autoResize } = this
       // minZoom && map.setMinZoom(minZoom)
       // maxZoom && map.setMaxZoom(maxZoom)
       mapType && map.setMapType(global[mapType])
