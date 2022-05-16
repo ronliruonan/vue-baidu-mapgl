@@ -22,10 +22,12 @@ export default {
       type: Number
     },
     minZoom: {
-      type: Number
+      type: Number,
+      default: 5
     },
     maxZoom: {
-      type: Number
+      type: Number,
+      default: 21
     },
     highResolution: {
       type: Boolean,
@@ -197,8 +199,8 @@ export default {
   methods: {
     setMapOptions () {
       const { map, minZoom, maxZoom, mapType, dragging, scrollWheelZoom, doubleClickZoom, keyboard, inertialDragging, continuousZoom, pinchToZoom, autoResize } = this
-      minZoom && map.setMinZoom(minZoom)
-      maxZoom && map.setMaxZoom(maxZoom)
+      // minZoom && map.setMinZoom(minZoom)
+      // maxZoom && map.setMaxZoom(maxZoom)
       mapType && map.setMapType(global[mapType])
       dragging ? map.enableDragging() : map.disableDragging()
       scrollWheelZoom ? map.enableScrollWheelZoom() : map.disableScrollWheelZoom()
@@ -210,9 +212,7 @@ export default {
       autoResize ? map.enableAutoResize() : map.disableAutoResize()
     },
     init (BMapGL) {
-      if (this.map) {
-        return
-      }
+      if (this.map) { return }
       let $el = this.$refs.view
       for (let $node of this.$slots.default || []) {
         if ($node.componentOptions && $node.componentOptions.tag === 'bmap-gl-view') {
@@ -220,7 +220,8 @@ export default {
           $el = $node.elm
         }
       }
-      const map = new BMapGL.Map($el, { enableHighResolution: this.highResolution, enableMapClick: this.mapClick })
+      const { minZoom, maxZoom } = this
+      const map = new BMapGL.Map($el, { enableHighResolution: this.highResolution, enableMapClick: this.mapClick, minZoom, maxZoom })
       this.map = map
       const { setMapOptions, zoom, getCenterPoint } = this
       // 1 && theme ? map.setMapStyle({ styleJson: theme }) : map.setMapStyle(mapStyle)
