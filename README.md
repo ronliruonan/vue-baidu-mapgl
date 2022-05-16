@@ -17,6 +17,9 @@
 因为项目中使用了Lite版本百度地图 `vue-baidu-map`，与业务实际对照百度地图官网有多差异，为保持用户体感一致，考虑使用Baidu MapGL版本。    
 考虑成本问题，直接直接fork原作者，升级为百度地图 GL版本，待完善ing.    
 
+## 与`vue-baidu-map`的继承对比
+todo
+
 ## 文档
 https://ronliruonan.github.io/vue-baidu-mapgl/#/zh/index
 
