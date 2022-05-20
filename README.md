@@ -25,6 +25,53 @@ https://ronliruonan.github.io/vue-baidu-mapgl/#/zh/index
 
 <br>
 <br>
+### Installation
+
+```bash
+npm i vue-baidu-map-plus
+```
+
+### Initialization
+
+```javascript
+import Vue from 'vue'
+import BMapGL from 'vue-baidu-map-plus';
+
+Vue.use(BMapGL, {
+  /* Visit http://lbsyun.baidu.com/apiconsole/key for details about app key. */
+  ak: 'YOUR_APP_KEY'
+})
+```
+
+### Usage
+
+```vue
+<template>
+  <bmap-gl style="height:75vh;" class="map" :zoom="19" scrollWheelZoom :center="{lng: 116.432809, lat: 39.96858}" @ready="readyHandler">
+  </bmap-gl>
+</template>
+
+<script>
+data () {
+  return {
+    mapInstance: null
+  };
+},
+methods: {
+  readyHandler ({ BMapGL, map }) {
+    this.mapInstance = map
+  },
+}
+</script>
+
+<style>
+/* The container of BaiduMap must be set width & height. */
+.map {
+  width: 100%;
+  height: 300px;
+}
+</style>
+```
 
 ## Thanks & `vue-baidu-map` 源著
 <p align="center">

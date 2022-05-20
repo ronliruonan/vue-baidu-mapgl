@@ -212,4 +212,7 @@ export default {
 .rowCls {
   margin-top: 20px;
 }
+/* 
+git push  --force --quiet "https://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@github.com/ronliruonan/vue-baidu-mapgl.git" master:gh-pages
+ */
 </style>
