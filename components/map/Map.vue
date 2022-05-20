@@ -23,7 +23,7 @@ export default {
     },
     minZoom: {
       type: Number,
-      default: 5
+      default: 5 // 5时，地图将直接展示，不存在由全国缩小的坐标的动画
     },
     maxZoom: {
       type: Number,
@@ -220,10 +220,9 @@ export default {
           $el = $node.elm
         }
       }
-      const { minZoom, maxZoom } = this
+      const { minZoom, maxZoom, setMapOptions, zoom, getCenterPoint } = this
       const map = new BMapGL.Map($el, { enableHighResolution: this.highResolution, enableMapClick: this.mapClick, minZoom, maxZoom })
       this.map = map
-      const { setMapOptions, zoom, getCenterPoint } = this
       // 1 && theme ? map.setMapStyle({ styleJson: theme }) : map.setMapStyle(mapStyle)
       setMapOptions()
       bindEvents.call(this, map)
