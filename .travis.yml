@@ -16,11 +16,11 @@ script:
   # - npm test
   - npm run build:docs
 after_success:
-  - cp ./docs/favicon.png ./dist/
-  - cd dist
-  - git init
-  - git config user.name "Ronan"
-  - git config user.email "liruonan@hotmail.com"
-  - git add .
-  - git commit -m "Travis build docs"
-  - git push  --force --quiet "https://${GITHUB_TOKEN}@github.com/ronliruonan/vue-baidu-mapgl.git" master:gh-pages
+  #- cp ./docs/favicon.png ./dist/
+  #- cd dist
+  #- git init
+  #- git config user.name "Ronan"
+  #- git config user.email "liruonan@hotmail.com"
+  #- git add .
+  #- git commit -m "Travis build docs"
+  #- git push  --force --quiet "https://${GITHUB_TOKEN}@github.com/ronliruonan/vue-baidu-mapgl.git" master:gh-pages
